@@ -13,7 +13,9 @@
     "sharedGlobals": [
       "{workspaceRoot}/firebase.json",
       "{workspaceRoot}/.firebaserc",
-      "{workspaceRoot}/.github/workflows/ci.yml"
+      "{workspaceRoot}/.github/workflows/ci.yml",
+      "{workspaceRoot}/.github/workflows/preview.yml",
+      "{workspaceRoot}/.github/workflows/deploy.yml"
     ]
   },
   "targetDefaults": {
@@ -52,6 +54,11 @@
           "fields": ["extends", "files", "include"]
         }
       ]
+    },
+    "@nx/js:tsc": {
+      "cache": true,
+      "dependsOn": ["^build"],
+      "inputs": ["production", "^production"]
     }
   },
   "generators": {
@@ -74,6 +81,14 @@
       "plugin": "@nx/eslint/plugin",
       "options": {
         "targetName": "eslint:lint"
+      }
+    },
+    {
+      "plugin": "@nx/vitest",
+      "options": {
+        "testTargetName": "vitest:test",
+        "ciTargetName": "test-ci",
+        "testMode": "watch"
       }
     }
   ],

@@ -1,0 +1,22 @@
+{
+  "name": "hosting",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "tools/hosting",
+  "projectType": "application",
+  "implicitDependencies": ["shell", "weather", "markets", "dashboard"],
+  "targets": {
+    "assemble": {
+      "executor": "nx:run-commands",
+      "dependsOn": [
+        {
+          "projects": ["shell", "weather", "markets", "dashboard"],
+          "target": "build"
+        }
+      ],
+      "outputs": ["{workspaceRoot}/dist/hosting"],
+      "options": {
+        "command": "node tools/hosting/assemble.mjs"
+      }
+    }
+  }
+}

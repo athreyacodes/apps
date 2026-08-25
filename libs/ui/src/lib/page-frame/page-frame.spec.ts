@@ -24,4 +24,11 @@ describe('PageFrame', () => {
     const compiled = fixture.nativeElement as HTMLElement;
     expect(compiled.querySelector('h1')?.textContent).toContain('Apps');
   });
+
+  it('should render a home link when homeHref is set', async () => {
+    fixture.componentRef.setInput('homeHref', '/');
+    await fixture.whenStable();
+    const compiled = fixture.nativeElement as HTMLElement;
+    expect(compiled.querySelector('a')?.getAttribute('href')).toBe('/');
+  });
 });

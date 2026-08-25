@@ -1,18 +1,13 @@
-import { createServer, type IncomingMessage, type ServerResponse } from 'node:http';
+import { createApp } from './app';
 
-export function handleRequest(_req: IncomingMessage, res: ServerResponse): void {
-  res.writeHead(200, { 'content-type': 'application/json' });
-  res.end(JSON.stringify({ status: 'ok' }));
-}
-
-export function createApp() {
-  return createServer(handleRequest);
-}
-
-const port = Number(process.env.PORT ?? 3000);
-
-if (require.main === module) {
-  createApp().listen(port, () => {
-    console.log(`api-bff listening on ${port}`);
+async function start(): Promise<void> {
+  const port = Number(process.env.PORT ?? 3000);
+  const host = process.env.HOST ?? '0.0.0.0';
+  const app = await createApp({
+    logger: process.env.NODE_ENV !== 'test',
   });
+  await app.listen({ port, host });
+  app.log.info(`api-bff listening on ${host}:${port}`);
 }
+
+void start();

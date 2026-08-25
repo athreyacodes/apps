@@ -25,6 +25,7 @@
       },
       "configurations": {
         "production": {
+          "baseHref": "/weather/",
           "budgets": [
             {
               "type": "initial",
@@ -42,7 +43,13 @@
         "development": {
           "optimization": false,
           "extractLicenses": false,
-          "sourceMap": true
+          "sourceMap": true,
+          "fileReplacements": [
+            {
+              "replace": "apps/weather/src/environments/environment.ts",
+              "with": "apps/weather/src/environments/environment.development.ts"
+            }
+          ]
         }
       }
     },
@@ -82,5 +89,5 @@
       }
     }
   },
-  "implicitDependencies": ["tokens"]
+  "implicitDependencies": ["tokens", "data-access-weather"]
 }

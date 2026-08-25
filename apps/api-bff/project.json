@@ -15,12 +15,13 @@
       "options": {
         "platform": "node",
         "outputPath": "dist/apps/api-bff",
-        "format": ["cjs"],
-        "bundle": false,
+        "format": ["esm"],
+        "bundle": true,
         "main": "apps/api-bff/src/main.ts",
         "tsConfig": "apps/api-bff/tsconfig.app.json",
         "assets": ["apps/api-bff/src/assets"],
         "generatePackageJson": true,
+        "external": ["fastify", "@fastify/cors", "@fastify/rate-limit"],
         "esbuildOptions": {
           "sourcemap": true,
           "outExtension": {

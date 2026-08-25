@@ -2,9 +2,9 @@
 
 Living architecture for **Apps** (`apps.athreya.codes`). This is the document to maintain. The original brief is [genesis-prompt.md](./genesis-prompt.md).
 
-Status: **Phase 0 complete** (Nx skeleton). Phase 1 (weather + BFF live) has not started.
+Status: **Phase 1 application code complete** (contract-bff, weather UI, Fastify BFF, Hosting assemble, preview/deploy workflows). First production traffic is blocked on GitHub OIDC → GCP WIF (`tools/gcp/setup-wif.sh`).
 
-Product name is Apps. GitHub repo today is `athreyacodes/platform`; rename to `athreyacodes/apps` before Phase 1 public traffic. Firebase project is the existing `apps-athreya-codes`.
+Product name is Apps. GitHub repo is `athreyacodes/apps` (renamed from `platform`). Firebase project is the existing `apps-athreya-codes`.
 
 ---
 
@@ -327,8 +327,7 @@ Laptop deploy is not the documented path.
 
 | Item                                   | Value                                                                                                            |
 | -------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
-| GitHub (today)                         | `athreyacodes/platform`                                                                                          |
-| GitHub (target)                        | `athreyacodes/apps`                                                                                              |
+| GitHub                                         | `athreyacodes/apps` (renamed from `platform`)                                                                        |
 | Go repo                                | `athreyacodes/apps-ops` (create in Phase 3)                                                                      |
 | Firebase / GCP project                 | `apps-athreya-codes` (exists; project number `1074049731655`)                                                    |
 | Hosting site ID                        | `apps-athreya-codes`                                                                                             |

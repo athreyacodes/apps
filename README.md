@@ -12,23 +12,29 @@ Architecture and delivery plan: [docs/plan.md](./docs/plan.md). Genesis brief: [
 
 ## Projects
 
-| Project     | Role                         |
-| ----------- | ---------------------------- |
-| `shell`     | Site home (`/`)              |
-| `weather`   | Weather UI (`/weather`)      |
-| `markets`   | Markets UI (`/markets`)      |
-| `dashboard` | Ops dashboard (`/dashboard`) |
-| `api-bff`   | Node BFF (`/api/**`)         |
-| `tokens`    | Design tokens stub           |
-| `ui`        | Shared page chrome stub      |
+| Project               | Role                                  |
+| --------------------- | ------------------------------------- |
+| `shell`               | Site home (`/`)                       |
+| `weather`             | Weather UI (`/weather`)               |
+| `markets`             | Markets UI (`/markets`) — later phase |
+| `dashboard`           | Ops dashboard (`/dashboard`) — later  |
+| `api-bff`             | Fastify BFF (`/api/**`)               |
+| `contract-bff`        | Zod DTOs shared by BFF and Angular    |
+| `data-access-weather` | Weather HTTP client                   |
+| `tokens`              | Design tokens stub                    |
+| `ui`                  | Shared page chrome                    |
 
 ## Commands
 
 ```sh
 nvm use
 npm ci
-npx nx serve shell
+npx nx serve api-bff
+npx nx serve weather
 npx nx affected -t lint,test,build --base=origin/main --head=HEAD
+npx nx run hosting:assemble
 ```
 
-Phase 0 is skeleton only: no production traffic, no preview/deploy workflows yet.
+Weather locally talks to the BFF at `http://localhost:3000`. Production uses same-origin `/api`.
+
+Preview/deploy workflows use GitHub OIDC → GCP WIF, not a service-account JSON key. Bootstrap WIF with `tools/gcp/setup-wif.sh` (needs `gcloud`).

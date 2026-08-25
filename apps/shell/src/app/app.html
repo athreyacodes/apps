@@ -1,4 +1,27 @@
 <ui-page-frame [title]="title">
-  <p>Apps skeleton — Phase 0</p>
-  <router-outlet />
+  <p>
+    Apps is a small public toolbox on this domain: weather now, markets and an ops dashboard next.
+    Each product is its own Angular app. They share chrome and tokens, and load as full pages — not
+    a federated SPA.
+  </p>
+
+  <nav class="product-nav" aria-label="Products">
+    <a href="/weather">Weather</a>
+    <a href="/markets">Markets</a>
+    <a href="/dashboard">Dashboard</a>
+  </nav>
+
+  <h2>Elsewhere</h2>
+  <ul>
+    <li><a href="https://athreya.codes">athreya.codes</a> — portfolio</li>
+    <li><a href="https://how.athreya.codes">how.athreya.codes</a> — notes</li>
+  </ul>
+
+  <h2>Architecture</h2>
+  <p>
+    This repo is an Nx workspace: Angular frontends plus a Node BFF. CI runs
+    <code>nx affected</code> so a tokens-only change does not pretend to be a backend change. Ops
+    (GitHub + domain checks) will live in a sibling Go repo, not inside this graph.
+  </p>
+  <p>Weather is fetched through the BFF from Open-Meteo. The browser never holds provider keys.</p>
 </ui-page-frame>

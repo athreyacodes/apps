@@ -25,6 +25,7 @@
       },
       "configurations": {
         "production": {
+          "baseHref": "/markets/",
           "budgets": [
             {
               "type": "initial",

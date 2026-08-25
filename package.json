@@ -8,7 +8,8 @@
     "test": "nx run-many -t test",
     "lint": "nx run-many -t lint",
     "format": "nx format:write",
-    "format:check": "nx format:check"
+    "format:check": "nx format:check",
+    "hosting:assemble": "nx run hosting:assemble"
   },
   "private": true,
   "dependencies": {
@@ -18,7 +19,11 @@
     "@angular/forms": "~22.0.4",
     "@angular/platform-browser": "~22.0.4",
     "@angular/router": "~22.0.4",
-    "rxjs": "~7.8.0"
+    "@fastify/cors": "^11.3.0",
+    "@fastify/rate-limit": "^11.2.0",
+    "fastify": "^5.12.1",
+    "rxjs": "~7.8.0",
+    "zod": "^4.4.3"
   },
   "devDependencies": {
     "@analogjs/vite-plugin-angular": "~2.6.0",

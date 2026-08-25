@@ -1,0 +1,29 @@
+{
+  "name": "contract-bff",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/contract-bff/src",
+  "projectType": "library",
+  "tags": ["type:util", "scope:bff"],
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/contract-bff",
+        "main": "libs/contract-bff/src/index.ts",
+        "tsConfig": "libs/contract-bff/tsconfig.lib.json",
+        "assets": ["libs/contract-bff/*.md"]
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint"
+    },
+    "test": {
+      "executor": "@nx/vitest:test",
+      "outputs": ["{options.reportsDirectory}"],
+      "options": {
+        "reportsDirectory": "coverage/libs/contract-bff"
+      }
+    }
+  }
+}
