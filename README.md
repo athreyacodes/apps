@@ -1,59 +1,34 @@
-# Platform
+# Apps
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.0.3.
+Nx workspace for [apps.athreya.codes](https://apps.athreya.codes): Angular apps + Node BFF.
 
-## Development server
+Architecture and delivery plan: [docs/plan.md](./docs/plan.md). Genesis brief: [docs/genesis-prompt.md](./docs/genesis-prompt.md).
 
-To start a local development server, run:
+## Tooling
 
-```bash
-ng serve
+- Node from `.nvmrc` (22.22.3)
+- Angular 22, zoneless, Vitest
+- Nx 23.1, npm, Prettier, ESLint module boundaries
+
+## Projects
+
+| Project     | Role                         |
+| ----------- | ---------------------------- |
+| `shell`     | Site home (`/`)              |
+| `weather`   | Weather UI (`/weather`)      |
+| `markets`   | Markets UI (`/markets`)      |
+| `dashboard` | Ops dashboard (`/dashboard`) |
+| `api-bff`   | Node BFF (`/api/**`)         |
+| `tokens`    | Design tokens stub           |
+| `ui`        | Shared page chrome stub      |
+
+## Commands
+
+```sh
+nvm use
+npm ci
+npx nx serve shell
+npx nx affected -t lint,test,build --base=origin/main --head=HEAD
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Phase 0 is skeleton only: no production traffic, no preview/deploy workflows yet.

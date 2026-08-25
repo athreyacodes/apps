@@ -1,5 +1,7 @@
 # Platform genesis prompt
 
+Living architecture: [docs/plan.md](./plan.md). This file stays the genesis prompt.
+
 Agent brief to produce an architecture + delivery **plan** (not the implementation). After the plan exists, maintain it as `docs/plan.md`. This file is the genesis prompt, not the living architecture doc.
 
 No React. Angular apps, Node.js backend, Go service. The plan must challenge whether Node and Go belong in this Nx repo or in a sibling repo.
@@ -86,7 +88,7 @@ Hard rules whichever way you pick:
 2. Shell vs independent apps
    - Platform shell (chrome, nav, route table) plus product apps that serve alone and compose in the shell.
    - v1: independent Nx apps on subdomains (or paths) sharing libs. That is enough.
-   - Module Federation is phase-later, only if we need independent *deploy* of remotes. Not because three demo apps need federation on day one.
+   - Module Federation is phase-later, only if we need independent _deploy_ of remotes. Not because three demo apps need federation on day one.
 
 3. Node
    - One Node process for v1: weather + markets (+ any public BFF routes). Cache, rate-limit, stable DTOs.

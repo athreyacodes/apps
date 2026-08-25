@@ -1,44 +1,64 @@
 {
-  "name": "platform",
+  "name": "@apps/source",
   "version": "0.0.0",
+  "license": "MIT",
   "scripts": {
-    "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
-    "watch": "ng build --watch --configuration development",
-    "test": "ng test"
-  },
-  "prettier": {
-    "printWidth": 100,
-    "singleQuote": true,
-    "overrides": [
-      {
-        "files": "*.html",
-        "options": {
-          "parser": "angular"
-        }
-      }
-    ]
+    "start": "nx serve shell",
+    "build": "nx run-many -t build",
+    "test": "nx run-many -t test",
+    "lint": "nx run-many -t lint",
+    "format": "nx format:write",
+    "format:check": "nx format:check"
   },
   "private": true,
-  "packageManager": "npm@10.9.2",
   "dependencies": {
-    "@angular/common": "^21.0.0",
-    "@angular/compiler": "^21.0.0",
-    "@angular/core": "^21.0.0",
-    "@angular/forms": "^21.0.0",
-    "@angular/platform-browser": "^21.0.0",
-    "@angular/router": "^21.0.0",
-    "layers-ui": "^0.12.0",
-    "rxjs": "~7.8.0",
-    "tslib": "^2.3.0"
+    "@angular/common": "~22.0.4",
+    "@angular/compiler": "~22.0.4",
+    "@angular/core": "~22.0.4",
+    "@angular/forms": "~22.0.4",
+    "@angular/platform-browser": "~22.0.4",
+    "@angular/router": "~22.0.4",
+    "rxjs": "~7.8.0"
   },
   "devDependencies": {
-    "@angular/build": "^21.0.3",
-    "@angular/cli": "^21.0.3",
-    "@angular/compiler-cli": "^21.0.0",
+    "@analogjs/vite-plugin-angular": "~2.6.0",
+    "@analogjs/vitest-angular": "~2.6.0",
+    "@angular-devkit/core": "~22.0.0",
+    "@angular-devkit/schematics": "~22.0.4",
+    "@angular/build": "~22.0.4",
+    "@angular/cli": "~22.0.4",
+    "@angular/compiler-cli": "~22.0.4",
+    "@angular/language-service": "~22.0.4",
+    "@eslint/js": "^9.8.0",
+    "@nx/angular": "23.1.1",
+    "@nx/esbuild": "23.1.1",
+    "@nx/eslint": "23.1.1",
+    "@nx/eslint-plugin": "23.1.1",
+    "@nx/js": "23.1.1",
+    "@nx/node": "23.1.1",
+    "@nx/vite": "23.1.1",
+    "@nx/vitest": "23.1.1",
+    "@nx/web": "23.1.1",
+    "@nx/workspace": "23.1.1",
+    "@oxc-project/runtime": "^0.115.0",
+    "@schematics/angular": "~22.0.4",
+    "@swc/helpers": "~0.5.18",
+    "@types/node": "^22.0.0",
+    "@typescript-eslint/utils": "^8.58.0",
+    "@vitest/coverage-v8": "~4.1.0",
+    "@vitest/ui": "~4.1.0",
+    "angular-eslint": "^22.0.0",
+    "esbuild": "^0.27.0",
+    "eslint": "^9.8.0",
+    "eslint-config-prettier": "^10.0.0",
     "jsdom": "^27.1.0",
-    "typescript": "~5.9.2",
+    "nx": "23.1.1",
+    "prettier": "~3.6.2",
+    "tslib": "^2.3.0",
+    "typescript": "~6.0.3",
+    "typescript-eslint": "^8.58.0",
+    "vite": "^8.0.0",
     "vitest": "^4.0.8"
-  }
+  },
+  "packageManager": "npm@10.9.2"
 }

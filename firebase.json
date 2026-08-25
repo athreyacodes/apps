@@ -1,11 +1,8 @@
 {
   "hosting": {
-    "public": "dist/platform/browser",
-    "ignore": [
-      "firebase.json",
-      "**/.*",
-      "**/node_modules/**"
-    ],
+    "site": "apps-athreya-codes",
+    "public": "dist/hosting",
+    "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
     "rewrites": [
       {
         "source": "**",

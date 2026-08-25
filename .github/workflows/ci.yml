@@ -1,0 +1,45 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+permissions:
+  actions: read
+  contents: read
+
+jobs:
+  affected:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      # Nx Cloud remote cache from Phase 0. Connect with `npx nx connect`, then set
+      # NX_CLOUD_ACCESS_TOKEN on the repo (or use the Nx Cloud GitHub integration).
+      - run: npx nx start-ci-run --distribute-on="false" --stop-agents-after="build"
+        env:
+          NX_CLOUD_ACCESS_TOKEN: ${{ secrets.NX_CLOUD_ACCESS_TOKEN }}
+        continue-on-error: true
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - run: npm ci
+
+      - uses: nrwl/nx-set-shas@v5
+        with:
+          main-branch-name: main
+
+      - name: Format check
+        run: npx nx format:check
+
+      - name: Affected lint, test, build
+        run: npx nx affected -t lint,test,build --base=${{ env.NX_BASE }} --head=${{ env.NX_HEAD }}
+        env:
+          NX_CLOUD_ACCESS_TOKEN: ${{ secrets.NX_CLOUD_ACCESS_TOKEN }}

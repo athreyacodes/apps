@@ -1,0 +1,23 @@
+@use '../../../../tokens/src/lib/styles/tokens';
+
+:host {
+  display: block;
+  color: var(--apps-color-fg);
+  background: var(--apps-color-bg);
+  font-family: var(--apps-font-sans);
+  min-height: 100vh;
+}
+
+.page-frame__header,
+.page-frame__main {
+  padding: var(--apps-space-md);
+}
+
+.page-frame__header h1 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.page-frame__main {
+  color: var(--apps-color-muted);
+}
