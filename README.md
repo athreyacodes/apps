@@ -7,7 +7,7 @@ Architecture and delivery plan: [docs/plan.md](./docs/plan.md). Genesis brief: [
 ## Tooling
 
 - Node from `.nvmrc` (22.22.3)
-- Angular 22, zoneless, Vitest
+- Angular 22, zoneless
 - Nx 23.1, npm, Prettier, ESLint module boundaries
 - `layers-ui` via `libs/tokens`
 
@@ -30,7 +30,7 @@ npm ci
 npx nx serve shell
 npx nx serve weather
 npx nx serve markets
-npx nx affected -t lint,test,build --base=origin/main --head=HEAD
+npx nx affected -t lint,build --base=origin/main --head=HEAD
 npx nx run hosting:assemble
 ```
 

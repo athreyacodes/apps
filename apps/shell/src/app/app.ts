@@ -1,39 +1,9 @@
 import { Component } from '@angular/core';
-import { RouterModule } from '@angular/router';
-import { PageFrame } from '@apps/ui';
-import { applyPageSeo } from '@apps/seo';
-
-type ProductCard = {
-  href: string;
-  title: string;
-  subtitle: string;
-  image: string;
-};
+import { RouterOutlet } from '@angular/router';
 
 @Component({
-  imports: [RouterModule, PageFrame],
+  imports: [RouterOutlet],
   selector: 'app-root',
-  templateUrl: './app.html',
-  styleUrl: './app.scss',
+  template: '<router-outlet />',
 })
-export class App {
-  constructor() {
-    applyPageSeo('home');
-  }
-
-  protected readonly title = 'Apps';
-  protected readonly products: readonly ProductCard[] = [
-    {
-      href: '/weather',
-      title: 'Weather',
-      subtitle: 'City search and a short forecast. Its own Angular app.',
-      image: '/images/weather.svg',
-    },
-    {
-      href: '/markets',
-      title: 'Markets',
-      subtitle: 'FX rates and a small watchlist. Its own Angular app.',
-      image: '/images/markets.svg',
-    },
-  ];
-}
+export class App {}

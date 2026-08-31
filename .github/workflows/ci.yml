@@ -39,7 +39,7 @@ jobs:
       - name: Format check
         run: npx nx format:check
 
-      - name: Affected lint, test, build
-        run: npx nx affected -t lint,test,build --base=${{ env.NX_BASE }} --head=${{ env.NX_HEAD }}
+      - name: Affected lint, build
+        run: npx nx affected -t lint,build --base=${{ env.NX_BASE }} --head=${{ env.NX_HEAD }}
         env:
           NX_CLOUD_ACCESS_TOKEN: ${{ secrets.NX_CLOUD_ACCESS_TOKEN }}

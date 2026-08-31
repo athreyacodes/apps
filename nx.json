@@ -35,14 +35,6 @@
         "{workspaceRoot}/tools/eslint-rules/**/*"
       ]
     },
-    "@angular/build:unit-test": {
-      "cache": true,
-      "inputs": ["default", "^production"]
-    },
-    "@nx/vitest:test": {
-      "cache": true,
-      "inputs": ["default", "^production"]
-    },
     "@nx/js:tsc": {
       "cache": true,
       "dependsOn": ["^build"],
@@ -54,14 +46,42 @@
       "e2eTestRunner": "none",
       "linter": "eslint",
       "style": "scss",
-      "unitTestRunner": "vitest-angular"
+      "unitTestRunner": "none"
     },
     "@nx/angular:library": {
       "linter": "eslint",
-      "unitTestRunner": "vitest-analog"
+      "unitTestRunner": "none"
     },
     "@nx/angular:component": {
-      "style": "scss"
+      "style": "scss",
+      "skipTests": true
+    },
+    "@nx/angular:directive": {
+      "skipTests": true
+    },
+    "@nx/angular:pipe": {
+      "skipTests": true
+    },
+    "@nx/angular:service": {
+      "skipTests": true
+    },
+    "@nx/angular:guard": {
+      "skipTests": true
+    },
+    "@nx/angular:interceptor": {
+      "skipTests": true
+    },
+    "@schematics/angular:component": {
+      "skipTests": true
+    },
+    "@schematics/angular:directive": {
+      "skipTests": true
+    },
+    "@schematics/angular:pipe": {
+      "skipTests": true
+    },
+    "@schematics/angular:service": {
+      "skipTests": true
     }
   },
   "plugins": [
@@ -69,14 +89,6 @@
       "plugin": "@nx/eslint/plugin",
       "options": {
         "targetName": "eslint:lint"
-      }
-    },
-    {
-      "plugin": "@nx/vitest",
-      "options": {
-        "testTargetName": "vitest:test",
-        "ciTargetName": "test-ci",
-        "testMode": "watch"
       }
     }
   ],

@@ -10,7 +10,7 @@
   "pages": {
     "home": {
       "path": "/",
-      "title": "Here’s Apps!",
+      "title": "Apps",
       "description": "A collection of Angular apps in one Nx workspace — the same graph I use to ship enterprise frontends. Weather and markets first."
     },
     "weather": {
