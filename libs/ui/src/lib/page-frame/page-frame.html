@@ -9,10 +9,20 @@
 
 <div class="page-frame__chrome">
   <header class="page-frame__header">
-    @if (homeHref(); as href) {
-      <a class="page-frame__home" [href]="href">Apps</a>
-    }
-    <h1>{{ title() }}</h1>
+    <h1>
+      @if (homeHref(); as href) {
+        <a class="page-frame__mark" [href]="href" aria-label="Apps">
+          <span class="tooltip">Apps</span>
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path
+              fill="currentColor"
+              d="M4 8h4V4H4zm6 12h4v-4h-4zm-6 0h4v-4H4zm0-6h4v-4H4zm6 0h4v-4h-4zm6-10v4h4V4zm-6 4h4V4h-4zm6 6h4v-4h-4zm0 6h4v-4h-4z"
+            />
+          </svg>
+        </a>
+      }
+      {{ title() }}
+    </h1>
   </header>
   <main class="page-frame__main">
     <ng-content />
