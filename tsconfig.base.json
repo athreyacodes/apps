@@ -16,9 +16,7 @@
     "strict": false,
     "paths": {
       "@apps/ui": ["./libs/ui/src/index.ts"],
-      "@apps/tokens": ["./libs/tokens/src/index.ts"],
-      "@apps/contract-bff": ["./libs/contract-bff/src/index.ts"],
-      "@apps/data-access-weather": ["./libs/data-access-weather/src/index.ts"]
+      "@apps/tokens": ["./libs/tokens/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

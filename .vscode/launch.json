@@ -1,20 +1,4 @@
 {
   "version": "0.2.0",
-  "configurations": [
-    {
-      "type": "node",
-      "request": "launch",
-      "name": "Debug api-bff with Nx",
-      "runtimeExecutable": "npx",
-      "runtimeArgs": ["nx", "serve", "api-bff"],
-      "env": {
-        "NODE_OPTIONS": "--inspect=9229"
-      },
-      "console": "integratedTerminal",
-      "internalConsoleOptions": "neverOpen",
-      "skipFiles": ["<node_internals>/**"],
-      "sourceMaps": true,
-      "outFiles": ["${workspaceFolder}/apps/api-bff/dist/**/*.(m|c|)js", "!**/node_modules/**"]
-    }
-  ]
+  "configurations": []
 }

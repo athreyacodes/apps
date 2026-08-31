@@ -18,23 +18,11 @@ export default [
           depConstraints: [
             {
               sourceTag: 'type:app',
-              onlyDependOnLibsWithTags: ['type:ui', 'type:data-access', 'type:auth', 'type:util'],
+              onlyDependOnLibsWithTags: ['type:ui', 'type:util'],
             },
             {
               sourceTag: 'type:ui',
               onlyDependOnLibsWithTags: ['type:ui', 'type:util'],
-            },
-            {
-              sourceTag: 'type:data-access',
-              onlyDependOnLibsWithTags: ['type:util'],
-            },
-            {
-              sourceTag: 'type:auth',
-              onlyDependOnLibsWithTags: ['type:data-access', 'type:util'],
-            },
-            {
-              sourceTag: 'type:api',
-              onlyDependOnLibsWithTags: ['type:util'],
             },
             {
               sourceTag: 'type:util',
@@ -46,19 +34,11 @@ export default [
             },
             {
               sourceTag: 'scope:weather',
-              onlyDependOnLibsWithTags: ['scope:platform', 'scope:bff', 'scope:weather'],
+              onlyDependOnLibsWithTags: ['scope:platform', 'scope:weather'],
             },
             {
               sourceTag: 'scope:markets',
-              onlyDependOnLibsWithTags: ['scope:platform', 'scope:bff', 'scope:markets'],
-            },
-            {
-              sourceTag: 'scope:dashboard',
-              onlyDependOnLibsWithTags: ['scope:platform', 'scope:dashboard'],
-            },
-            {
-              sourceTag: 'scope:bff',
-              onlyDependOnLibsWithTags: ['scope:bff'],
+              onlyDependOnLibsWithTags: ['scope:platform', 'scope:markets'],
             },
             {
               sourceTag: 'scope:platform',

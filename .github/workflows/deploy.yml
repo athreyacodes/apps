@@ -10,87 +10,8 @@ permissions:
   id-token: write
 
 jobs:
-  bff:
-    if: vars.WIF_PROVIDER != ''
-    runs-on: ubuntu-latest
-    environment: production
-    outputs:
-      deploy: ${{ steps.affected.outputs.deploy }}
-    steps:
-      - uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-
-      - uses: actions/setup-node@v4
-        with:
-          node-version-file: .nvmrc
-          cache: npm
-
-      - run: npm ci
-
-      - uses: nrwl/nx-set-shas@v5
-        with:
-          main-branch-name: main
-
-      - id: affected
-        run: |
-          if npx nx show projects --affected --base="${NX_BASE}" --head="${NX_HEAD}" | grep -qx api-bff; then
-            echo "deploy=true" >> "$GITHUB_OUTPUT"
-          else
-            echo "deploy=false" >> "$GITHUB_OUTPUT"
-          fi
-
-      - name: Build BFF
-        if: steps.affected.outputs.deploy == 'true'
-        run: npx nx build api-bff
-
-      - uses: google-github-actions/auth@v2
-        if: steps.affected.outputs.deploy == 'true'
-        with:
-          workload_identity_provider: ${{ vars.WIF_PROVIDER }}
-          service_account: ${{ vars.WIF_SERVICE_ACCOUNT }}
-
-      - uses: google-github-actions/setup-gcloud@v2
-        if: steps.affected.outputs.deploy == 'true'
-
-      - uses: docker/setup-buildx-action@v3
-        if: steps.affected.outputs.deploy == 'true'
-
-      - name: Configure Artifact Registry
-        if: steps.affected.outputs.deploy == 'true'
-        run: gcloud auth configure-docker us-central1-docker.pkg.dev --quiet
-
-      - name: Build and push image
-        if: steps.affected.outputs.deploy == 'true'
-        uses: docker/build-push-action@v6
-        with:
-          context: .
-          file: apps/api-bff/Dockerfile
-          push: true
-          tags: us-central1-docker.pkg.dev/apps-athreya-codes/apps/apps-bff:${{ github.sha }}
-          cache-from: type=gha
-          cache-to: type=gha,mode=max
-
-      - name: Deploy Cloud Run
-        if: steps.affected.outputs.deploy == 'true'
-        run: |
-          suffix="$(echo "${GITHUB_SHA}" | cut -c1-7)"
-          gcloud run deploy apps-bff \
-            --project=apps-athreya-codes \
-            --image="us-central1-docker.pkg.dev/apps-athreya-codes/apps/apps-bff:${GITHUB_SHA}" \
-            --region=us-central1 \
-            --revision-suffix="${suffix}" \
-            --allow-unauthenticated \
-            --port=8080 \
-            --memory=256Mi \
-            --cpu=1 \
-            --min-instances=0 \
-            --max-instances=3 \
-            --set-env-vars=NODE_ENV=production
-
   hosting:
     if: vars.WIF_PROVIDER != ''
-    needs: bff
     runs-on: ubuntu-latest
     environment: production
     steps:

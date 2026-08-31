@@ -19,9 +19,14 @@
           {
             "glob": "**/*",
             "input": "apps/markets/public"
+          },
+          {
+            "glob": "**/*",
+            "input": "node_modules/layers-ui/fonts",
+            "output": "/assets/layers-ui/fonts"
           }
         ],
-        "styles": ["apps/markets/src/styles.scss"]
+        "styles": ["node_modules/layers-ui/layers.min.css", "apps/markets/src/styles.scss"]
       },
       "configurations": {
         "production": {

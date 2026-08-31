@@ -1,15 +1,16 @@
-@use '../../../../tokens/src/lib/styles/tokens';
-
 :host {
   display: block;
   color: var(--apps-color-fg);
-  background: var(--apps-color-bg);
   font-family: var(--apps-font-sans);
-  min-height: 100vh;
+  min-height: 100dvh;
 }
 
-.page-frame__header,
-.page-frame__main {
+.page-frame__chrome {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 100dvh;
   max-width: 42rem;
   margin: 0 auto;
   padding: var(--apps-space-md);
@@ -33,5 +34,6 @@
 }
 
 .page-frame__main {
+  flex: 1;
   color: var(--apps-color-fg);
 }

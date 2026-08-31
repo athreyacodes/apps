@@ -2,7 +2,7 @@
 
 Living architecture for **Apps** (`apps.athreya.codes`). This is the document to maintain. The original brief is [genesis-prompt.md](./genesis-prompt.md).
 
-Status: **Phase 1 application code complete** (contract-bff, weather UI, Fastify BFF, Hosting assemble, preview/deploy workflows). First production traffic is blocked on GitHub OIDC → GCP WIF (`tools/gcp/setup-wif.sh`).
+Status: **This repo is Angular only** (shell, weather, markets). Node BFF and Go ops come later as sibling repos. Hosting assemble and preview/deploy workflows stay here. Production traffic is still gated on GitHub OIDC → GCP WIF (`tools/gcp/setup-wif.sh`).
 
 Product name is Apps. GitHub repo is `athreyacodes/apps` (renamed from `platform`). Firebase project is the existing `apps-athreya-codes`.
 

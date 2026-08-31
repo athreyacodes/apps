@@ -19,9 +19,14 @@
           {
             "glob": "**/*",
             "input": "apps/shell/public"
+          },
+          {
+            "glob": "**/*",
+            "input": "node_modules/layers-ui/fonts",
+            "output": "/assets/layers-ui/fonts"
           }
         ],
-        "styles": ["apps/shell/src/styles.scss"]
+        "styles": ["node_modules/layers-ui/layers.min.css", "apps/shell/src/styles.scss"]
       },
       "configurations": {
         "production": {

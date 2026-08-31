@@ -1,14 +1,26 @@
-/* Apps design tokens stub. Phase 2 wires layers-ui through this file. */
+/* Apps tokens wrap layers-ui. Color and type come from layers.min.css. */
+html {
+  background-color: var(--bg-color, #eeeeee);
+}
+
+body {
+  margin: 0;
+  min-height: 100%;
+  background-color: transparent;
+  color: var(--apps-color-fg);
+  font-family: var(--apps-font-sans);
+}
+
 :root {
-  --apps-color-fg: #111827;
-  --apps-color-bg: #ffffff;
-  --apps-color-muted: #6b7280;
-  --apps-color-accent: #1d4ed8;
+  --apps-color-fg: var(--primary-color, #156064);
+  --apps-color-bg: transparent;
+  --apps-color-muted: var(--primary-color, #156064);
+  --apps-color-accent: var(--primary-color, #156064);
   --apps-color-danger: #b91c1c;
-  --apps-color-border: #e5e7eb;
-  --apps-space-sm: 0.5rem;
-  --apps-space-md: 1rem;
+  --apps-color-border: var(--primary-translucent-color, #afc5c6);
+  --apps-space-sm: var(--space-2, 0.5rem);
+  --apps-space-md: var(--space-3, 1rem);
   --apps-space-lg: 1.5rem;
-  --apps-radius: 0.5rem;
-  --apps-font-sans: system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --apps-radius: var(--radius-lg, 0.5rem);
+  --apps-font-sans: var(--font-montserrat), 'Montserrat', sans-serif;
 }

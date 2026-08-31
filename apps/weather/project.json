@@ -19,9 +19,14 @@
           {
             "glob": "**/*",
             "input": "apps/weather/public"
+          },
+          {
+            "glob": "**/*",
+            "input": "node_modules/layers-ui/fonts",
+            "output": "/assets/layers-ui/fonts"
           }
         ],
-        "styles": ["apps/weather/src/styles.scss"]
+        "styles": ["node_modules/layers-ui/layers.min.css", "apps/weather/src/styles.scss"]
       },
       "configurations": {
         "production": {
@@ -43,13 +48,7 @@
         "development": {
           "optimization": false,
           "extractLicenses": false,
-          "sourceMap": true,
-          "fileReplacements": [
-            {
-              "replace": "apps/weather/src/environments/environment.ts",
-              "with": "apps/weather/src/environments/environment.development.ts"
-            }
-          ]
+          "sourceMap": true
         }
       }
     },
@@ -89,5 +88,5 @@
       }
     }
   },
-  "implicitDependencies": ["tokens", "data-access-weather"]
+  "implicitDependencies": ["tokens"]
 }

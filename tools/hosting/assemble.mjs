@@ -12,7 +12,6 @@ const apps = [
   { name: 'shell', dest: '.' },
   { name: 'weather', dest: 'weather' },
   { name: 'markets', dest: 'markets' },
-  { name: 'dashboard', dest: 'dashboard' },
 ];
 
 for (const app of apps) {

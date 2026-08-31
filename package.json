@@ -19,11 +19,8 @@
     "@angular/forms": "~22.0.4",
     "@angular/platform-browser": "~22.0.4",
     "@angular/router": "~22.0.4",
-    "@fastify/cors": "^11.3.0",
-    "@fastify/rate-limit": "^11.2.0",
-    "fastify": "^5.12.1",
-    "rxjs": "~7.8.0",
-    "zod": "^4.4.3"
+    "layers-ui": "^0.26.1",
+    "rxjs": "~7.8.0"
   },
   "devDependencies": {
     "@analogjs/vite-plugin-angular": "~2.6.0",
@@ -36,11 +33,9 @@
     "@angular/language-service": "~22.0.4",
     "@eslint/js": "^9.8.0",
     "@nx/angular": "23.1.1",
-    "@nx/esbuild": "23.1.1",
     "@nx/eslint": "23.1.1",
     "@nx/eslint-plugin": "23.1.1",
     "@nx/js": "23.1.1",
-    "@nx/node": "23.1.1",
     "@nx/vite": "23.1.1",
     "@nx/vitest": "23.1.1",
     "@nx/web": "23.1.1",

@@ -1,9 +1,21 @@
-<header class="page-frame__header">
-  @if (homeHref(); as href) {
-    <a class="page-frame__home" [href]="href">Apps</a>
-  }
-  <h1>{{ title() }}</h1>
-</header>
-<main class="page-frame__main">
-  <ng-content />
-</main>
+<div class="wave3-container" aria-hidden="true">
+  <div class="wave3-sea"></div>
+  <div class="wave3-sky blur slow">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+
+<div class="page-frame__chrome">
+  <header class="page-frame__header">
+    @if (homeHref(); as href) {
+      <a class="page-frame__home" [href]="href">Apps</a>
+    }
+    <h1>{{ title() }}</h1>
+  </header>
+  <main class="page-frame__main">
+    <ng-content />
+  </main>
+  <ui-footer />
+</div>

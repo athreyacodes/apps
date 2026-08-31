@@ -7,23 +7,12 @@
     "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
     "rewrites": [
       {
-        "source": "/api/**",
-        "run": {
-          "serviceId": "apps-bff",
-          "region": "us-central1"
-        }
-      },
-      {
         "source": "/weather/**",
         "destination": "/weather/index.html"
       },
       {
         "source": "/markets/**",
         "destination": "/markets/index.html"
-      },
-      {
-        "source": "/dashboard/**",
-        "destination": "/dashboard/index.html"
       },
       {
         "source": "**",
