@@ -1,3 +1,4 @@
 import { Route } from '@angular/router';
+import { seoData } from '@apps/seo';
 
-export const appRoutes: Route[] = [];
+export const appRoutes: Route[] = [{ path: '', title: seoData.pages.weather.title }];

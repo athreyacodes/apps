@@ -14,9 +14,11 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "strict": false,
+    "resolveJsonModule": true,
     "paths": {
       "@apps/ui": ["./libs/ui/src/index.ts"],
-      "@apps/tokens": ["./libs/tokens/src/index.ts"]
+      "@apps/tokens": ["./libs/tokens/src/index.ts"],
+      "@apps/seo": ["./libs/seo/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

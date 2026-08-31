@@ -1,0 +1,27 @@
+{
+  "siteUrl": "https://apps.athreya.codes",
+  "siteName": "Apps",
+  "locale": "en_GB",
+  "language": "en-GB",
+  "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+  "author": "Athreya M R",
+  "authorUrl": "https://athreya.codes/",
+  "themeColor": "#eeeeee",
+  "pages": {
+    "home": {
+      "path": "/",
+      "title": "Here’s Apps!",
+      "description": "A collection of Angular apps in one Nx workspace — the same graph I use to ship enterprise frontends. Weather and markets first."
+    },
+    "weather": {
+      "path": "/weather",
+      "title": "Weather · Apps",
+      "description": "Weather on Apps: city search and a short forecast. Its own Angular app in an Nx monorepo."
+    },
+    "markets": {
+      "path": "/markets",
+      "title": "Markets · Apps",
+      "description": "Markets on Apps: FX rates and a small watchlist. Its own Angular app in an Nx monorepo."
+    }
+  }
+}

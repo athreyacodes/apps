@@ -19,6 +19,7 @@ Architecture and delivery plan: [docs/plan.md](./docs/plan.md). Genesis brief: [
 | `weather` | Weather UI (`/weather`)   |
 | `markets` | Markets UI (`/markets`)   |
 | `tokens`  | Design tokens + layers-ui |
+| `seo`     | Shared titles and meta    |
 | `ui`      | Shared page chrome        |
 
 ## Commands

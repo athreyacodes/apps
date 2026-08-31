@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { PageFrame } from '@apps/ui';
+import { applyPageSeo } from '@apps/seo';
 
 type ProductCard = {
   href: string;
@@ -16,6 +17,10 @@ type ProductCard = {
   styleUrl: './app.scss',
 })
 export class App {
+  constructor() {
+    applyPageSeo('home');
+  }
+
   protected readonly title = 'Apps';
   protected readonly products: readonly ProductCard[] = [
     {
