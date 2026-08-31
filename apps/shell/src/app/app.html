@@ -1,8 +1,30 @@
 <ui-page-frame [title]="title">
-  <p>A small public toolbox. Each product is its own Angular app on this domain.</p>
+  <figure class="lede">
+    <blockquote>
+      <p>
+        Portfolio sites show the résumé.
+        <strong>This one shows the graph.</strong>
+        A decade of platform work taught me this: when several products share a frontend, they
+        belong in one Nx workspace — apps depend on libs, CI is <code>nx affected</code>, a CSS-only
+        change does not pretend to be a backend.
+      </p>
+      <p>
+        Apps is a collection of my projects on this domain. Each is its own Angular app. They share
+        chrome and tokens. They load as full pages, not a federated SPA. I built it in public to
+        show how I actually ship enterprise frontends.
+      </p>
+    </blockquote>
+  </figure>
 
   <nav class="product-nav" aria-label="Products">
-    <a href="/weather">Weather</a>
-    <a href="/markets">Markets</a>
+    @for (product of products; track product.href) {
+      <a class="product-card" [href]="product.href">
+        <div class="product-card__media">
+          <img [src]="product.image" [alt]="product.title" width="320" height="180" />
+        </div>
+        <h2>{{ product.title }}</h2>
+        <p>{{ product.subtitle }}</p>
+      </a>
+    }
   </nav>
 </ui-page-frame>

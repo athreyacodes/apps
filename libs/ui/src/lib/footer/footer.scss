@@ -41,6 +41,7 @@
 }
 
 .icon-link {
+  position: relative;
   display: inline-flex;
   line-height: 0;
 }
@@ -50,9 +51,47 @@
   height: 1.2em;
 }
 
+.tooltip {
+  position: absolute;
+  bottom: calc(100% + 0.45rem);
+  left: 50%;
+  z-index: 2;
+  padding: 0.2rem 0.45rem;
+  border-radius: 0.25rem;
+  background: var(--primary-color, #156064);
+  color: #eeeeee;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  line-height: 1.2;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateX(-50%) translateY(0.15rem);
+  transition:
+    opacity 0.12s ease,
+    transform 0.12s ease;
+}
+
+.tooltip::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  border: 0.28rem solid transparent;
+  border-top-color: var(--primary-color, #156064);
+  transform: translateX(-50%);
+}
+
 .icon-link:hover,
 .icon-link:focus-visible {
   color: var(--primary-color, #156064);
+}
+
+.icon-link:hover .tooltip,
+.icon-link:focus-visible .tooltip {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
 }
 
 .icon-link:focus-visible {

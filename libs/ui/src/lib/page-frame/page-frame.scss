@@ -1,8 +1,9 @@
 :host {
-  display: block;
+  display: flex;
+  flex-direction: column;
+  min-height: 100dvh;
   color: var(--apps-color-fg);
   font-family: var(--apps-font-sans);
-  min-height: 100dvh;
 }
 
 .page-frame__chrome {
@@ -10,8 +11,9 @@
   z-index: 1;
   display: flex;
   flex-direction: column;
-  min-height: 100dvh;
-  max-width: 42rem;
+  flex: 1;
+  width: 100%;
+  max-width: 44rem;
   margin: 0 auto;
   padding: var(--apps-space-md);
 }

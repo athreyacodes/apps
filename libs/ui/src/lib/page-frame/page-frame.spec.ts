@@ -37,9 +37,9 @@ describe('PageFrame', () => {
     const footer = compiled.querySelector('footer.site-footer');
     expect(footer).toBeTruthy();
     expect(footer?.textContent).toContain('athreya.codes');
-    expect(compiled.querySelector('a[aria-label="How"]')?.getAttribute('href')).toBe(
-      'https://how.athreya.codes',
-    );
+    const how = compiled.querySelector('a[aria-label="How"]');
+    expect(how?.getAttribute('href')).toBe('https://how.athreya.codes');
+    expect(how?.querySelector('.tooltip')?.textContent).toContain('How');
   });
 
   it('should render blurred waves', () => {
