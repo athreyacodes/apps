@@ -21,7 +21,6 @@ node_modules
 .vscode/*
 !.vscode/settings.json
 !.vscode/tasks.json
-!.vscode/launch.json
 !.vscode/extensions.json
 
 # misc
@@ -45,7 +44,3 @@ Thumbs.db
 .claude/settings.local.json
 
 .angular
-
-__screenshots__/
-
-vitest.config.*.timestamp*

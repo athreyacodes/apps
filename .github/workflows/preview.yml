@@ -4,7 +4,6 @@ on:
   pull_request:
 
 permissions:
-  checks: write
   contents: read
   id-token: write
   pull-requests: write
@@ -32,7 +31,21 @@ jobs:
           workload_identity_provider: ${{ vars.WIF_PROVIDER }}
           service_account: ${{ vars.WIF_SERVICE_ACCOUNT }}
 
-      - uses: FirebaseExtended/action-hosting-deploy@v0
-        with:
-          repoToken: ${{ secrets.GITHUB_TOKEN }}
-          projectId: apps-athreya-codes
+      - name: Deploy preview channel
+        id: preview
+        run: |
+          npx -y firebase-tools@latest hosting:channel:deploy "pr-${{ github.event.number }}" \
+            --expires 7d \
+            --project apps-athreya-codes \
+            --non-interactive \
+            --json > /tmp/firebase-preview.json
+          URL="$(node -e "const r=require('/tmp/firebase-preview.json'); process.stdout.write(r.result['apps-athreya-codes'].url)")"
+          echo "url=$URL" >> "$GITHUB_OUTPUT"
+
+      - name: Comment preview URL
+        if: steps.preview.outputs.url != ''
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PREVIEW_URL: ${{ steps.preview.outputs.url }}
+        run: |
+          gh pr comment "${{ github.event.number }}" --body "Preview: ${PREVIEW_URL}"

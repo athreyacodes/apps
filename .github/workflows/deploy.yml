@@ -32,8 +32,5 @@ jobs:
           workload_identity_provider: ${{ vars.WIF_PROVIDER }}
           service_account: ${{ vars.WIF_SERVICE_ACCOUNT }}
 
-      - uses: FirebaseExtended/action-hosting-deploy@v0
-        with:
-          repoToken: ${{ secrets.GITHUB_TOKEN }}
-          projectId: apps-athreya-codes
-          channelId: live
+      - name: Deploy Hosting
+        run: npx -y firebase-tools@latest deploy --only hosting --project apps-athreya-codes --non-interactive
