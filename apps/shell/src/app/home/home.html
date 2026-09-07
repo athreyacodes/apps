@@ -9,13 +9,14 @@
     <p>
       Apps is a collection of my projects on this domain. Each is its own Angular app. They share
       chrome and tokens. They load as full pages, not a federated SPA. I built it in public to show
-      how I actually ship enterprise frontends.
+      how I actually ship enterprise frontends. Blogs is the writing route — prerendered, on
+      <code>/blogs</code>.
     </p>
   </div>
 
   <nav class="product-nav" aria-label="Products">
     @for (product of products; track product.href) {
-      <a class="product-card" [routerLink]="product.href">
+      <a class="product-card" [href]="product.href">
         <div class="product-card__media">
           <img [src]="product.image" [alt]="product.title" width="320" height="180" />
         </div>

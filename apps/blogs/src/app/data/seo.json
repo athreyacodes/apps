@@ -1,0 +1,50 @@
+{
+  "siteUrl": "https://apps.athreya.codes/blogs",
+  "siteName": "Blogs",
+  "locale": "en_GB",
+  "language": "en-GB",
+  "dateModified": "2026-09-08",
+  "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+  "author": "Athreya M R",
+  "authorUrl": "https://athreya.codes/",
+  "authorJobTitle": "Front-end Architect",
+  "authorImage": "https://athreya.codes/images/dp-og.jpg",
+  "sameAs": [
+    "https://athreya.codes/",
+    "https://apps.athreya.codes/",
+    "https://how.athreya.codes/",
+    "https://www.linkedin.com/in/athreyamr/",
+    "https://github.com/athreyacodes"
+  ],
+  "ogImageWidth": 1200,
+  "ogImageHeight": 630,
+  "ogImageType": "image/png",
+  "rssPath": "/rss.xml",
+  "home": {
+    "title": "Blogs · Apps",
+    "description": "Writing from Athreya M R on Angular, architecture, and shipping frontends — published on Apps.",
+    "ogTitle": "Blogs · Apps",
+    "ogDescription": "Writing from Athreya M R on Angular, architecture, and shipping frontends — published on Apps.",
+    "ogImage": "/images/og-card.png",
+    "ogType": "website",
+    "imageAlt": "Blogs on Apps — writing by Athreya M R",
+    "twitterCard": "summary_large_image",
+    "twitterTitle": "Blogs · Apps",
+    "twitterDescription": "Writing from Athreya M R on Angular, architecture, and shipping frontends — published on Apps.",
+    "twitterImage": "/images/og-card.png"
+  },
+  "notFound": {
+    "title": "Page not found · Blogs",
+    "description": "That page is not on Blogs.",
+    "robots": "noindex, follow",
+    "ogTitle": "Page not found · Blogs",
+    "ogDescription": "That page is not on Blogs.",
+    "ogImage": "/images/og-card.png",
+    "ogType": "website",
+    "imageAlt": "Blogs on Apps — writing by Athreya M R",
+    "twitterCard": "summary_large_image",
+    "twitterTitle": "Page not found · Blogs",
+    "twitterDescription": "That page is not on Blogs.",
+    "twitterImage": "/images/og-card.png"
+  }
+}

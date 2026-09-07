@@ -15,11 +15,24 @@
         "destination": "/markets/index.html"
       },
       {
+        "source": "/blogs/**",
+        "destination": "/blogs/404.html"
+      },
+      {
         "source": "**",
         "destination": "/index.html"
       }
     ],
     "headers": [
+      {
+        "source": "/blogs/404",
+        "headers": [
+          {
+            "key": "X-Robots-Tag",
+            "value": "noindex, follow"
+          }
+        ]
+      },
       {
         "source": "**/*.@(js|css|woff2|avif|webp|jpg|jpeg|png|svg|ico|ttf)",
         "headers": [

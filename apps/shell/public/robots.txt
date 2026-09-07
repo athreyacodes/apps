@@ -1,0 +1,8 @@
+# Search engines and AI answer crawlers are welcome.
+# Blogs index: https://apps.athreya.codes/blogs/llms.txt
+# Blogs RSS: https://apps.athreya.codes/blogs/rss.xml
+
+User-agent: *
+Allow: /
+
+Sitemap: https://apps.athreya.codes/blogs/sitemap.xml

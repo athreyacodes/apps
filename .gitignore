@@ -44,3 +44,9 @@ Thumbs.db
 .claude/settings.local.json
 
 .angular
+
+# Blogs markdown pipeline
+apps/blogs/src/app/generated/
+apps/blogs/public/sitemap.xml
+apps/blogs/public/rss.xml
+apps/blogs/public/llms.txt

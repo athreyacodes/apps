@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { RouterLink } from '@angular/router';
 import { PageFrame } from '@apps/ui';
 import { applyPageSeo } from '@apps/seo';
 
@@ -11,7 +10,7 @@ type ProductCard = {
 };
 
 @Component({
-  imports: [PageFrame, RouterLink],
+  imports: [PageFrame],
   selector: 'app-home',
   templateUrl: './home.html',
   styleUrl: './home.scss',
@@ -34,6 +33,12 @@ export class Home {
       title: 'Markets',
       subtitle: 'FX rates and a small watchlist. Its own Angular app.',
       image: '/images/markets.svg',
+    },
+    {
+      href: '/blogs',
+      title: 'Blogs',
+      subtitle: 'Prerendered writing on this domain. Its own Angular app.',
+      image: '/images/blogs.svg',
     },
   ];
 }
