@@ -10,7 +10,13 @@
   <picture>
     <source type="image/avif" srcset="images/dp-240.avif" />
     <source type="image/webp" srcset="images/dp-240.webp" />
-    <img [src]="AUTHOR.image" width="40" height="40" [alt]="" decoding="async" />
+    <img
+      [src]="AUTHOR.image"
+      width="40"
+      height="40"
+      alt=""
+      decoding="async"
+    />
   </picture>
   <span class="author-name">{{ AUTHOR.name }}</span>
 </button>

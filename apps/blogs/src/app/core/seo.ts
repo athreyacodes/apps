@@ -152,7 +152,7 @@ export class SeoService {
           name: seoData.siteName,
           alternateName: 'Here’s how!',
           description: seoData.home.ogDescription,
-          url: `${SITE_URL}/`,
+          url: SITE_URL,
           inLanguage: seoData.language,
           publisher: { '@id': personId },
           author: { '@id': personId },
@@ -163,7 +163,7 @@ export class SeoService {
           '@id': blogId,
           name: seoData.siteName,
           description: seoData.home.description,
-          url: `${SITE_URL}/`,
+          url: SITE_URL,
           isPartOf: { '@id': websiteId },
           inLanguage: seoData.language,
           dateModified,
@@ -181,7 +181,7 @@ export class SeoService {
         {
           '@type': 'CollectionPage',
           '@id': pageId,
-          url: `${SITE_URL}/`,
+          url: SITE_URL,
           name: seoData.home.title,
           description: seoData.home.description,
           inLanguage: seoData.language,
@@ -221,7 +221,7 @@ export class SeoService {
           '@type': 'WebSite',
           '@id': websiteId,
           name: seoData.siteName,
-          url: `${SITE_URL}/`,
+          url: SITE_URL,
           publisher: { '@id': personId },
         },
         {
@@ -273,7 +273,7 @@ export class SeoService {
               '@type': 'ListItem',
               position: 1,
               name: seoData.siteName,
-              item: `${SITE_URL}/`,
+              item: SITE_URL,
             },
             {
               '@type': 'ListItem',
@@ -365,6 +365,7 @@ export class SeoService {
       return path;
     }
 
-    return `${SITE_URL}/${path.replace(/^\//, '')}`;
+    const trimmed = path.replace(/^\//, '');
+    return trimmed ? `${SITE_URL}/${trimmed}` : SITE_URL;
   }
 }

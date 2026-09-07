@@ -123,6 +123,14 @@ function headingId(text) {
   return plain.replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
 }
 
+function publicSrc(href) {
+  if (href.startsWith('http://') || href.startsWith('https://')) {
+    return href;
+  }
+
+  return href.replace(/^\//, '');
+}
+
 marked.use({
   gfm: true,
   renderer: {
@@ -138,6 +146,12 @@ marked.use({
       }
 
       return `<h${depth}>${html}</h${depth}>\n`;
+    },
+    image({ href, title, text }) {
+      const src = escapeHtml(publicSrc(href));
+      const alt = escapeHtml(text ?? '');
+      const titleAttr = title ? ` title="${escapeHtml(title)}"` : '';
+      return `<img src="${src}" alt="${alt}"${titleAttr} loading="lazy" decoding="async">`;
     },
   },
 });
@@ -334,7 +348,7 @@ function sitemapXml(posts) {
   const shareImage = `${siteUrl}${seoData.home.ogImage}`;
   const urls = [
     {
-      loc: `${siteUrl}/`,
+      loc: siteUrl,
       lastmod: latestUpdated(posts),
       changefreq: 'weekly',
       priority: '1.0',
@@ -397,7 +411,7 @@ ${categories}
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>${escapeXml(seoData.siteName)}</title>
-    <link>${escapeXml(`${siteUrl}/`)}</link>
+    <link>${escapeXml(siteUrl)}</link>
     <atom:link href="${escapeXml(`${siteUrl}${seoData.rssPath}`)}" rel="self" type="application/rss+xml"/>
     <description>${escapeXml(seoData.home.description)}</description>
     <language>${seoData.language.toLowerCase()}</language>
@@ -407,7 +421,7 @@ ${categories}
     <image>
       <url>${escapeXml(`${siteUrl}${seoData.home.ogImage}`)}</url>
       <title>${escapeXml(seoData.siteName)}</title>
-      <link>${escapeXml(`${siteUrl}/`)}</link>
+      <link>${escapeXml(siteUrl)}</link>
     </image>
 ${items}
   </channel>

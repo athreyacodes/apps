@@ -5,7 +5,13 @@
     <picture>
       <source type="image/avif" srcset="images/dp-240.avif" />
       <source type="image/webp" srcset="images/dp-240.webp" />
-      <img [src]="AUTHOR.image" width="56" height="56" [alt]="AUTHOR.name" decoding="async" />
+      <img
+        [src]="AUTHOR.image"
+        width="56"
+        height="56"
+        [attr.alt]="AUTHOR.name"
+        decoding="async"
+      />
     </picture>
 
     <div class="author-copy">
