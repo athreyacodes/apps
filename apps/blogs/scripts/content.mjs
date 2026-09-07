@@ -334,7 +334,7 @@ function sitemapXml(posts) {
   const shareImage = `${siteUrl}${seoData.home.ogImage}`;
   const urls = [
     {
-      loc: siteUrl,
+      loc: `${siteUrl}/`,
       lastmod: latestUpdated(posts),
       changefreq: 'weekly',
       priority: '1.0',
@@ -397,7 +397,7 @@ ${categories}
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>${escapeXml(seoData.siteName)}</title>
-    <link>${escapeXml(siteUrl)}</link>
+    <link>${escapeXml(`${siteUrl}/`)}</link>
     <atom:link href="${escapeXml(`${siteUrl}${seoData.rssPath}`)}" rel="self" type="application/rss+xml"/>
     <description>${escapeXml(seoData.home.description)}</description>
     <language>${seoData.language.toLowerCase()}</language>
@@ -407,7 +407,7 @@ ${categories}
     <image>
       <url>${escapeXml(`${siteUrl}${seoData.home.ogImage}`)}</url>
       <title>${escapeXml(seoData.siteName)}</title>
-      <link>${escapeXml(siteUrl)}</link>
+      <link>${escapeXml(`${siteUrl}/`)}</link>
     </image>
 ${items}
   </channel>
@@ -420,13 +420,13 @@ function llmsTxt(posts) {
     .map((post) => `- [${post.title}](${siteUrl}/${post.slug}): ${post.description}`)
     .join('\n');
 
-  return `# Blogs
+  return `# How
 
-> Writing from Athreya M R, published on Apps.
+> Notes from Athreya M R on how he builds software.
 
-The site is a static blog at ${siteUrl}. Each post is prerendered HTML on apps.athreya.codes.
+The site is a static blog at ${siteUrl}. Each note is one decision explained the way you would tell a teammate — Angular, architecture, and the tools around them.
 
-## Posts
+## Notes
 
 ${notes}
 
@@ -434,7 +434,6 @@ ${notes}
 
 - [RSS](${siteUrl}${seoData.rssPath})
 - [Sitemap](${siteUrl}/sitemap.xml)
-- [Apps](https://apps.athreya.codes/)
 - [Author](${seoData.authorUrl})
 `;
 }

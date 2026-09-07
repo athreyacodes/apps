@@ -50,7 +50,7 @@ export class SeoService {
   }
 
   applyPost(post: Post): void {
-    const title = `${post.title} · Blogs`;
+    const title = `${post.title} · How`;
     const imageAlt = `${post.title} — ${TAG_LABELS[post.mainTag]}`;
 
     this.applyTags({
@@ -130,7 +130,7 @@ export class SeoService {
     this.setLink('author', seoData.authorUrl);
     this.setLink('alternate', RSS_URL, {
       type: 'application/rss+xml',
-      title: `${seoData.siteName} posts`,
+      title: `${seoData.siteName} notes`,
     });
     this.setLink('sitemap', `${SITE_URL}/sitemap.xml`, { type: 'application/xml' });
   }
@@ -150,9 +150,9 @@ export class SeoService {
           '@type': 'WebSite',
           '@id': websiteId,
           name: seoData.siteName,
-          alternateName: 'Blogs · Apps',
+          alternateName: 'Here’s how!',
           description: seoData.home.ogDescription,
-          url: SITE_URL,
+          url: `${SITE_URL}/`,
           inLanguage: seoData.language,
           publisher: { '@id': personId },
           author: { '@id': personId },
@@ -163,7 +163,7 @@ export class SeoService {
           '@id': blogId,
           name: seoData.siteName,
           description: seoData.home.description,
-          url: SITE_URL,
+          url: `${SITE_URL}/`,
           isPartOf: { '@id': websiteId },
           inLanguage: seoData.language,
           dateModified,
@@ -181,7 +181,7 @@ export class SeoService {
         {
           '@type': 'CollectionPage',
           '@id': pageId,
-          url: SITE_URL,
+          url: `${SITE_URL}/`,
           name: seoData.home.title,
           description: seoData.home.description,
           inLanguage: seoData.language,
@@ -221,7 +221,7 @@ export class SeoService {
           '@type': 'WebSite',
           '@id': websiteId,
           name: seoData.siteName,
-          url: SITE_URL,
+          url: `${SITE_URL}/`,
           publisher: { '@id': personId },
         },
         {
@@ -273,7 +273,7 @@ export class SeoService {
               '@type': 'ListItem',
               position: 1,
               name: seoData.siteName,
-              item: SITE_URL,
+              item: `${SITE_URL}/`,
             },
             {
               '@type': 'ListItem',
@@ -341,7 +341,7 @@ export class SeoService {
 
   private setLink(rel: string, href: string, attrs: Record<string, string> = {}): void {
     const extra = Object.entries(attrs)
-      .map(([key, value]) => `[${key}="${value.replace(/"/g, '\\"')}"]`)
+      .map(([key, value]) => `[${key}="${value.replaceAll('"', '\\"')}"]`)
       .join('');
     const selector = `link[rel="${rel}"]${extra}`;
     let link = this.document.head.querySelector<HTMLLinkElement>(selector);
@@ -365,7 +365,6 @@ export class SeoService {
       return path;
     }
 
-    const trimmed = path.replace(/^\//, '');
-    return trimmed ? `${SITE_URL}/${trimmed}` : SITE_URL;
+    return `${SITE_URL}/${path.replace(/^\//, '')}`;
   }
 }

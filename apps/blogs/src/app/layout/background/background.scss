@@ -1,0 +1,37 @@
+:host {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+  background: linear-gradient(to bottom, var(--background-light) 0%, var(--background) 100%);
+}
+
+.clouds {
+  height: 100%;
+  /* Plain url() first so browsers without image-set() still get the texture. */
+  background-image: url('../../../../public/images/background/cloud3.png');
+  background-image: image-set(
+    url('../../../../public/images/background/cloud3.avif') type('image/avif'),
+    url('../../../../public/images/background/cloud3.png') type('image/png')
+  );
+  background-position: 100px 250px;
+  background-repeat: repeat-x;
+  opacity: var(--background-clouds-opacity);
+  animation: drift 100s linear infinite;
+}
+
+@keyframes drift {
+  from {
+    background-position: 0 25px;
+  }
+  to {
+    background-position: 1100px 25px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .clouds {
+    animation: none;
+  }
+}

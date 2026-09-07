@@ -5,7 +5,6 @@ import {
   Component,
   computed,
   DestroyRef,
-  HostListener,
   inject,
   PLATFORM_ID,
   signal,
@@ -15,11 +14,11 @@ import { toSignal } from '@angular/core/rxjs-interop';
 import { DomSanitizer } from '@angular/platform-browser';
 import { ActivatedRoute, RouterLink } from '@angular/router';
 import { map } from 'rxjs';
-import { PageFrame } from '@apps/ui';
 
 import type { Post, Tag } from '../../core/post';
 import { Posts } from '../../core/posts';
 import bodies from '../../generated/bodies.json';
+import { AuthorCard } from '../../shared/author/author-card';
 
 const SECTIONS = [
   { id: 'what', label: 'What' },
@@ -30,7 +29,7 @@ const SECTIONS = [
 
 @Component({
   selector: 'app-post',
-  imports: [PageFrame, DatePipe, RouterLink],
+  imports: [AuthorCard, DatePipe, RouterLink],
   templateUrl: './post.html',
   styleUrl: './post.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -43,8 +42,6 @@ export class PostPage {
   private readonly isBrowser = isPlatformBrowser(inject(PLATFORM_ID));
   private observer: IntersectionObserver | undefined;
   private observedSlug: string | undefined;
-
-  protected readonly title = 'Blogs';
 
   readonly post = toSignal(inject(ActivatedRoute).data.pipe(map((data) => data['post'] as Post)), {
     requireSync: true,
@@ -87,7 +84,6 @@ export class PostPage {
     this.scrollTo(id);
   }
 
-  @HostListener('click', ['$event'])
   protected copyCode(event: Event): void {
     const target = event.target as HTMLElement | null;
     const button = target?.closest<HTMLButtonElement>('[data-copy]');

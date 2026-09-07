@@ -1,0 +1,145 @@
+:host {
+  position: relative;
+  display: inline-flex;
+}
+
+.author-trigger {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  margin: 0;
+  padding: 0.2rem 0.45rem 0.2rem 0.2rem;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+}
+
+.author-trigger:hover,
+.author-trigger:focus-visible {
+  background: var(--background-light, #d2dfdf);
+}
+
+.author-trigger:focus-visible {
+  outline: 2px solid #156064;
+  outline-offset: 2px;
+}
+
+.author-trigger picture,
+.author-trigger img {
+  display: block;
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 50%;
+  object-fit: cover;
+  background: #d2dfdf;
+}
+
+.author-name {
+  font-style: italic;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.scrim {
+  position: fixed;
+  inset: 0;
+  z-index: 40;
+  background: rgb(18 73 76 / 18%);
+  animation: fade-in 160ms ease-out;
+}
+
+.panel {
+  position: absolute;
+  inset-block-start: calc(100% + 0.45rem);
+  inset-inline-start: 0;
+  z-index: 41;
+  inline-size: min(16.5rem, calc(100vw - 2rem));
+  border-radius: 0.75rem;
+  background: #fff;
+  box-shadow: 0 10px 28px rgb(18 73 76 / 18%);
+  animation: slide-in 180ms ease-out;
+}
+
+.options {
+  margin: 0;
+  padding: 0.4rem;
+  list-style: none;
+}
+
+.options li + li {
+  border-block-start: 1px solid rgb(21 96 100 / 18%);
+}
+
+.options a,
+.options .close {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  inline-size: 100%;
+  padding: 0.8rem 0.9rem;
+  border: 0;
+  border-radius: 0.55rem;
+  background: none;
+  color: var(--text, #12494c);
+  font: inherit;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-align: start;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.options a:hover,
+.options a:focus-visible,
+.options .close:hover,
+.options .close:focus-visible {
+  background: var(--background-light, #d2dfdf);
+}
+
+.options a:focus-visible,
+.options .close:focus-visible {
+  outline: 2px solid #156064;
+  outline-offset: -2px;
+}
+
+.option-icon {
+  flex: 0 0 auto;
+  width: 1.15rem;
+  height: 1.15rem;
+  color: #156064;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+}
+
+@keyframes slide-in {
+  from {
+    opacity: 0;
+    transform: translateY(-0.4rem);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scrim,
+  .panel {
+    animation: none;
+  }
+}

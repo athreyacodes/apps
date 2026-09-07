@@ -2,14 +2,33 @@
   text-align: left;
 }
 
-.lede {
-  margin: 0.5rem 0 2rem;
+.quote {
+  display: grid;
+  gap: 0.9rem;
+  margin: 0 0 2.25rem;
+  padding: 0.15rem 0 0.15rem 1.15rem;
+  border-left: 3px solid var(--text, #12494c);
+  font-synthesis: style weight;
+}
+
+.quote blockquote {
+  margin: 0;
+}
+
+.quote p {
+  margin: 0;
   font-size: 1.05rem;
+  font-style: italic;
   line-height: 1.65;
 }
 
-.lede code {
-  font-size: 0.9em;
+.quote strong {
+  font-weight: 800;
+}
+
+.quote figcaption {
+  display: flex;
+  align-items: center;
 }
 
 .toolbar {

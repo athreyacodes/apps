@@ -1,5 +1,7 @@
-# Search engines and AI answer crawlers are welcome.
-# Index for assistants: https://apps.athreya.codes/blogs/llms.txt
+# Search engines and AI answer crawlers are welcome (Googlebot, Bingbot,
+# OAI-SearchBot, ChatGPT-User, PerplexityBot, Claude-SearchBot, GPTBot,
+# ClaudeBot, Google-Extended).
+# Notes index for assistants: https://apps.athreya.codes/blogs/llms.txt
 # RSS: https://apps.athreya.codes/blogs/rss.xml
 
 User-agent: *

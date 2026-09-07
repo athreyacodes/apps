@@ -55,8 +55,8 @@
             },
             {
               "type": "anyComponentStyle",
-              "maximumWarning": "8kb",
-              "maximumError": "16kb"
+              "maximumWarning": "4kb",
+              "maximumError": "8kb"
             }
           ],
           "outputHashing": "all"
@@ -96,5 +96,5 @@
       "executor": "@nx/eslint:lint"
     }
   },
-  "implicitDependencies": ["tokens", "ui"]
+  "implicitDependencies": []
 }

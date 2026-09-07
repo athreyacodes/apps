@@ -8,7 +8,7 @@ import { SeoService } from './seo';
 
 export const postTitleResolver: ResolveFn<string> = (route) => {
   const post = inject(Posts).bySlug(route.paramMap.get('slug') ?? '');
-  return post ? `${post.title} · Blogs` : seoData.notFound.title;
+  return post ? `${post.title} · How` : seoData.notFound.title;
 };
 
 export const homeSeoResolver: ResolveFn<boolean> = () => {

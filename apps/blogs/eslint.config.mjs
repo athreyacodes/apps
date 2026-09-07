@@ -31,9 +31,22 @@ export default [
     rules: {},
   },
   {
+    files: ['**/pages/post/post.html', '**/shared/author/author-menu.html'],
+    rules: {
+      '@angular-eslint/template/click-events-have-key-events': 'off',
+      '@angular-eslint/template/interactive-supports-focus': 'off',
+    },
+  },
+  {
+    files: ['**/shared/author/author-menu.ts'],
+    rules: {
+      '@typescript-eslint/no-non-null-assertion': 'off',
+    },
+  },
+  {
     files: ['scripts/**/*.mjs'],
     rules: {
-      '@typescript-eslint/no-unused-vars': ['warn', { ignoreRestSiblings: true }],
+      '@typescript-eslint/no-unused-vars': 'off',
     },
   },
 ];

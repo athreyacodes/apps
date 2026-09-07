@@ -1,0 +1,21 @@
+:host {
+  display: block;
+  min-height: 100dvh;
+}
+
+.shell {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 100dvh;
+  margin: 0 auto;
+  max-width: 72rem;
+  padding: calc(1rem + env(safe-area-inset-top, 0px)) max(1.5rem, env(safe-area-inset-right, 0px))
+    max(1.5rem, env(safe-area-inset-bottom, 0px)) max(1.5rem, env(safe-area-inset-left, 0px));
+}
+
+.page {
+  flex: 1;
+  padding: 1.5rem 0 2.5rem;
+}

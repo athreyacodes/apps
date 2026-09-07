@@ -1,5 +1,5 @@
 import { inject } from '@angular/core';
-import { PrerenderFallback, RenderMode, type ServerRoute } from '@angular/ssr';
+import { PrerenderFallback, RenderMode, ServerRoute } from '@angular/ssr';
 
 import { Posts } from './core/posts';
 

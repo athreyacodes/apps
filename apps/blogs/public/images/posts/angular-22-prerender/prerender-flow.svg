@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="240" viewBox="0 0 960 240" role="img" aria-label="Markdown to prerendered HTML">
+  <rect width="960" height="240" fill="#eeeeee"/>
+  <rect x="20" y="50" width="200" height="140" rx="16" fill="#d2dfdf" stroke="#156064" stroke-width="2"/>
+  <text x="120" y="128" text-anchor="middle" font-family="Montserrat, Helvetica, sans-serif" font-size="22" font-weight="700" fill="#12494c">.md file</text>
+  <polygon points="240,120 290,120 290,108 330,120 290,132 290,120" fill="#156064"/>
+  <rect x="350" y="50" width="240" height="140" rx="16" fill="#d2dfdf" stroke="#156064" stroke-width="2"/>
+  <text x="470" y="118" text-anchor="middle" font-family="Montserrat, Helvetica, sans-serif" font-size="22" font-weight="700" fill="#12494c">content.mjs</text>
+  <text x="470" y="148" text-anchor="middle" font-family="Montserrat, Helvetica, sans-serif" font-size="16" fill="#156064">highlight at build</text>
+  <polygon points="610,120 660,120 660,108 700,120 660,132 660,120" fill="#156064"/>
+  <rect x="720" y="50" width="220" height="140" rx="16" fill="#156064"/>
+  <text x="830" y="128" text-anchor="middle" font-family="Montserrat, Helvetica, sans-serif" font-size="22" font-weight="700" fill="#eeeeee">static HTML</text>
+</svg>

@@ -2,12 +2,12 @@
 <html lang="en-GB">
   <head>
     <meta charset="utf-8" />
-    <title>Blogs · Apps</title>
+    <title>Here’s how!</title>
     <base href="/" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <meta
       name="description"
-      content="Writing from Athreya M R on Angular, architecture, and shipping frontends — published on Apps."
+      content="Here’s how I build. Notes from a decade of front-end work — Angular, architecture, and the tools around them — written down as I go."
     />
     <meta
       name="robots"
@@ -18,8 +18,8 @@
       content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
     />
     <meta name="author" content="Athreya M R" />
-    <meta name="application-name" content="Blogs" />
-    <meta name="apple-mobile-web-app-title" content="Blogs" />
+    <meta name="application-name" content="How" />
+    <meta name="apple-mobile-web-app-title" content="How" />
     <meta name="theme-color" content="#eeeeee" />
     <meta name="color-scheme" content="light only" />
 
@@ -28,7 +28,7 @@
     <link
       rel="alternate"
       type="application/rss+xml"
-      title="Blogs posts"
+      title="How notes"
       href="https://apps.athreya.codes/blogs/rss.xml"
     />
     <link
@@ -39,30 +39,67 @@
     <link rel="icon" type="image/x-icon" href="favicon.ico" />
     <link rel="apple-touch-icon" href="apple-touch-icon.png" />
 
-    <meta property="og:site_name" content="Blogs" />
-    <meta property="og:title" content="Blogs · Apps" />
+    <meta property="og:site_name" content="How" />
+    <meta property="og:title" content="Here’s how!" />
     <meta
       property="og:description"
-      content="Writing from Athreya M R on Angular, architecture, and shipping frontends — published on Apps."
+      content="Here’s how I build. Notes from a decade of front-end work — Angular, architecture, and the tools around them — written down as I go."
     />
-    <meta property="og:image" content="https://apps.athreya.codes/blogs/images/og-card.png" />
-    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image" content="https://apps.athreya.codes/blogs/images/og-card.jpg" />
+    <meta property="og:image:type" content="image/jpeg" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
-    <meta property="og:image:alt" content="Blogs on Apps — writing by Athreya M R" />
+    <meta property="og:image:alt" content="Here’s how — technical writing by Athreya M R" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://apps.athreya.codes/blogs" />
     <meta property="og:locale" content="en_GB" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Blogs · Apps" />
+    <meta name="twitter:title" content="Here’s how!" />
     <meta
       name="twitter:description"
-      content="Writing from Athreya M R on Angular, architecture, and shipping frontends — published on Apps."
+      content="Here’s how I build. Notes from a decade of front-end work — Angular, architecture, and the tools around them — written down as I go."
     />
-    <meta name="twitter:image" content="https://apps.athreya.codes/blogs/images/og-card.png" />
-    <meta name="twitter:image:alt" content="Blogs on Apps — writing by Athreya M R" />
+    <meta name="twitter:image" content="https://apps.athreya.codes/blogs/images/og-card.jpg" />
+    <meta name="twitter:image:alt" content="Here’s how — technical writing by Athreya M R" />
+
+    <!--
+    The full-viewport cloud texture is the largest paint on narrow screens, and
+    a CSS background is only discovered once the stylesheet parses. Browsers
+    without AVIF skip this on the type hint and take the PNG from the stylesheet.
+  -->
+    <link
+      rel="preload"
+      as="image"
+      type="image/avif"
+      href="images/background/cloud3.avif"
+      fetchpriority="high"
+    />
   </head>
+
   <body>
+    <!-- Match Safari status bar / toolbar tint to the page background before first paint. -->
+    <script>
+      (function () {
+        try {
+          document.documentElement.style.colorScheme = 'light';
+
+          var color = '#eeeeee';
+          var metas = document.querySelectorAll('meta[name="theme-color"]');
+          var meta = metas[0];
+          if (!meta) {
+            meta = document.createElement('meta');
+            meta.setAttribute('name', 'theme-color');
+            document.head.appendChild(meta);
+          }
+          meta.removeAttribute('media');
+          meta.setAttribute('content', color);
+          for (var i = 1; i < metas.length; i++) {
+            metas[i].remove();
+          }
+        } catch (e) {}
+      })();
+    </script>
+
     <app-root></app-root>
   </body>
 </html>

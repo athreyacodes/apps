@@ -1,0 +1,135 @@
+:host {
+  display: block;
+}
+
+.site-header {
+  display: flex;
+  align-items: center;
+  min-height: 3.5rem;
+}
+
+.wordmark-heading {
+  margin: 0;
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+}
+
+.wordmark {
+  color: var(--text, #12494c);
+  font-family: var(--font-montserrat), 'Montserrat', sans-serif;
+  line-height: 1;
+  text-decoration: none;
+  white-space: nowrap;
+  font-synthesis: weight;
+}
+
+.wordmark:hover,
+.wordmark:focus-visible {
+  text-decoration: none;
+}
+
+.wordmark:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 0.18em;
+}
+
+.wordmark--home {
+  display: inline-block;
+  font-size: clamp(2.05rem, 9vw, 5.25rem);
+  letter-spacing: 0.01em;
+}
+
+.wordmark-thin {
+  font-weight: 300;
+}
+
+.wordmark-strong {
+  font-weight: 800;
+}
+
+:host.is-home .site-header {
+  align-items: flex-start;
+  min-height: 0;
+  padding: 1.1rem 0 0;
+}
+
+.brand {
+  display: grid;
+  gap: 0.45rem;
+  justify-items: start;
+}
+
+.lede {
+  margin: 0 0 0 6px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  line-height: 1.35;
+}
+
+.wordmark--expand {
+  display: inline-flex;
+  align-items: baseline;
+  padding: 0.2rem 0;
+  font-size: clamp(1.1rem, 2.2vw, 1.4rem);
+}
+
+.wordmark-bits {
+  display: inline-flex;
+  align-items: baseline;
+}
+
+.wordmark-here {
+  display: inline-grid;
+  grid-template-columns: 0fr;
+  min-width: 0;
+  overflow: hidden;
+  transition: grid-template-columns 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.wordmark-here > span {
+  overflow: hidden;
+  min-width: 0;
+  white-space: nowrap;
+  font-weight: 300;
+}
+
+.wordmark-how {
+  font-weight: 800;
+}
+
+.wordmark--expand:hover .wordmark-here,
+.wordmark--expand:focus-visible .wordmark-here {
+  grid-template-columns: 1fr;
+}
+
+.wordmark-punct {
+  display: inline-grid;
+  place-items: center;
+  min-width: 0.75em;
+}
+
+.wordmark-q,
+.wordmark-bang {
+  grid-area: 1 / 1;
+  transition:
+    opacity 0.28s ease,
+    transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.wordmark-bang {
+  opacity: 0;
+  transform: rotate(-65deg) scale(0.45);
+}
+
+.wordmark--expand:hover .wordmark-q,
+.wordmark--expand:focus-visible .wordmark-q {
+  opacity: 0;
+  transform: rotate(55deg) scale(0.45);
+}
+
+.wordmark--expand:hover .wordmark-bang,
+.wordmark--expand:focus-visible .wordmark-bang {
+  opacity: 1;
+  transform: rotate(0) scale(1);
+}
