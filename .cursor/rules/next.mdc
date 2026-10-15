@@ -1,0 +1,13 @@
+---
+description: Read and update docs/next.md for this repo
+alwaysApply: true
+---
+
+# Next
+
+`docs/next.md` is the task list for this repo.
+
+- Read it before starting work here.
+- When asked what is next, take the first open item under **Now**. Do not pull from **Later** unless asked.
+- When an item is committed, move it to **Done** with the date (`- [x] YYYY-MM-DD …`).
+- Do not add items unless asked.

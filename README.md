@@ -27,3 +27,7 @@ npx nx run hosting:assemble
 Locally, `nx serve shell` on port `4200` is enough for the hub. Weather, Markets, and Blogs are routes in the shell. Production still ships them as path-composed Hosting. Serve the real blogs app with `npx nx serve blogs` (port `4203`).
 
 Preview/deploy use GitHub OIDC → GCP WIF (`tools/gcp/setup-wif.sh`), not a service-account JSON key.
+
+## Next
+
+Open work for this repo: [docs/next.md](docs/next.md).
