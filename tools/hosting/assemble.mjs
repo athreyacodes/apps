@@ -8,12 +8,7 @@ const out = join(root, 'dist/hosting');
 rmSync(out, { recursive: true, force: true });
 mkdirSync(out, { recursive: true });
 
-const apps = [
-  { name: 'shell', dest: '.' },
-  { name: 'weather', dest: 'weather' },
-  { name: 'markets', dest: 'markets' },
-  { name: 'blogs', dest: 'blogs' },
-];
+const apps = [{ name: 'shell', dest: '.' }];
 
 for (const app of apps) {
   const src = join(root, 'dist/apps', app.name, 'browser');

@@ -1,7 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="Node.js">
-  <rect width="1200" height="630" fill="#d2dfdf"/>
-  <rect width="1200" height="1" fill="#156064"/>
-  <rect y="629" width="1200" height="1" fill="#156064"/>
-  <text x="80" y="300" font-family="Montserrat, Helvetica, sans-serif" font-size="28" font-weight="700" fill="#156064" letter-spacing="6">HOW</text>
-  <text x="80" y="390" font-family="Montserrat, Helvetica, sans-serif" font-size="72" font-weight="800" fill="#12494c">Node.js</text>
-</svg>

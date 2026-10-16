@@ -3,18 +3,14 @@
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "tools/hosting",
   "projectType": "application",
-  "implicitDependencies": ["shell", "weather", "markets", "blogs"],
+  "implicitDependencies": ["shell"],
   "targets": {
     "assemble": {
       "executor": "nx:run-commands",
       "dependsOn": [
         {
-          "projects": ["shell", "weather", "markets"],
+          "projects": ["shell"],
           "target": "build"
-        },
-        {
-          "projects": ["blogs"],
-          "target": "postbuild"
         }
       ],
       "outputs": ["{workspaceRoot}/dist/hosting"],

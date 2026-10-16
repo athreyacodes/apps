@@ -11,22 +11,7 @@
     "home": {
       "path": "/",
       "title": "Apps",
-      "description": "A collection of Angular apps in one Nx workspace — the same graph I use to ship enterprise frontends. Weather, markets, and blogs."
-    },
-    "weather": {
-      "path": "/weather",
-      "title": "Weather · Apps",
-      "description": "Weather on Apps: city search and a short forecast. Its own Angular app in an Nx monorepo."
-    },
-    "markets": {
-      "path": "/markets",
-      "title": "Markets · Apps",
-      "description": "Markets on Apps: FX rates and a small watchlist. Its own Angular app in an Nx monorepo."
-    },
-    "blogs": {
-      "path": "/blogs",
-      "title": "Blogs · Apps",
-      "description": "Blogs on Apps: prerendered writing on Angular, architecture, and shipping frontends."
+      "description": "A collection of Angular apps in one Nx workspace — the same graph I use to ship enterprise frontends."
     }
   }
 }

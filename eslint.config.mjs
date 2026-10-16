@@ -33,14 +33,6 @@ export default [
               onlyDependOnLibsWithTags: ['scope:platform'],
             },
             {
-              sourceTag: 'scope:weather',
-              onlyDependOnLibsWithTags: ['scope:platform', 'scope:weather'],
-            },
-            {
-              sourceTag: 'scope:markets',
-              onlyDependOnLibsWithTags: ['scope:platform', 'scope:markets'],
-            },
-            {
               sourceTag: 'scope:platform',
               onlyDependOnLibsWithTags: ['scope:platform', 'type:util', 'type:ui'],
             },
