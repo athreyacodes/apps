@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
-import { Author, Banner, PageFrame, Quote } from '@apps/ui';
+import { Author, Banner, PageFrame } from '@apps/ui';
 import { applyPageSeo } from '@apps/seo';
 
 @Component({
-  imports: [PageFrame, Banner, Quote, Author],
+  imports: [PageFrame, Banner, Author],
   selector: 'app-home',
   templateUrl: './home.html',
 })

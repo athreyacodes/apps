@@ -5,6 +5,9 @@
 .author {
   display: grid;
   gap: 0.85rem;
+  padding: 1.15rem;
+  border-radius: 1.25rem;
+  background: var(--apps-card-soft, rgb(21 96 100 / 14%));
 }
 
 .author-identity {
@@ -52,10 +55,4 @@
   display: flex;
   flex-wrap: wrap;
   gap: 0.35rem;
-}
-
-.author-divider {
-  margin: 1.75rem 0 0;
-  border: 0;
-  border-top: 1px solid rgb(21 96 100 / 28%);
 }

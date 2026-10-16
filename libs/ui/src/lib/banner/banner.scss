@@ -8,9 +8,21 @@
   gap: 2.5rem;
 }
 
-.banner__quote {
+.banner__description {
   flex: 1 1 auto;
   min-width: 0;
+  color: #356063;
+  font-size: 1.05rem;
+  line-height: 1.65;
+}
+
+.banner__description p {
+  margin: 0;
+}
+
+:host-context(.color-scheme-dark) .banner__description,
+:host-context([data-color-scheme='dark']) .banner__description {
+  color: var(--apps-color-muted, #9fb3b4);
 }
 
 .banner__author {
@@ -28,7 +40,9 @@
 
   .banner__author {
     flex-basis: auto;
-    width: 100%;
+    width: max-content;
+    max-width: 100%;
+    margin-left: 0;
     margin-right: 0;
   }
 }

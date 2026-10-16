@@ -3,6 +3,7 @@
 /* Same face as How: weight 400 only, so 600/700 stay regular.
    The heading face is the one place the real bold weight is used. */
 :root {
+  --apps-card-soft: rgb(21 96 100 / 14%);
   --mat-tooltip-container-color: var(--primary-color, #156064);
   --mat-tooltip-supporting-text-color: #ffffff;
   --mat-tooltip-container-shape: 0.25rem;
@@ -14,6 +15,7 @@
 }
 
 :root.color-scheme-dark {
+  --apps-card-soft: rgb(127 179 181 / 12%);
   --apps-color-fg: #d2dfdf;
   --apps-color-muted: #9fb3b4;
   --apps-color-accent: #7fb3b5;

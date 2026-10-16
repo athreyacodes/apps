@@ -11,7 +11,7 @@
     "home": {
       "path": "/",
       "title": "Apps",
-      "description": "A collection of Angular apps in one Nx workspace — the same graph I use to ship enterprise frontends."
+      "description": "Angular apps. The larger ones are micro-frontends. The smaller proofs of concept were done as part of my projects, and they are links."
     }
   }
 }
