@@ -20,8 +20,9 @@
     <meta name="author" content="Athreya M R" />
     <meta name="application-name" content="Apps" />
     <meta name="apple-mobile-web-app-title" content="Apps" />
-    <meta name="theme-color" content="#eeeeee" />
-    <meta name="color-scheme" content="light only" />
+    <meta name="theme-color" content="#eeeeee" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#121212" media="(prefers-color-scheme: dark)" />
+    <meta name="color-scheme" content="light dark" />
 
     <link rel="canonical" href="https://apps.athreya.codes/" />
     <link rel="author" href="https://athreya.codes/" />
@@ -77,6 +78,31 @@
     </script>
   </head>
   <body>
+    <script>
+      (function () {
+        try {
+          var match = document.cookie.match(/(?:^|; )portfolio\.theme=(light|dark)(?:;|$)/);
+          var stored = match ? match[1] : localStorage.getItem('portfolio.theme');
+          var dark = stored ? stored === 'dark' : window.matchMedia('(prefers-color-scheme: dark)').matches;
+          var mode = dark ? 'dark' : 'light';
+          document.documentElement.classList.toggle('color-scheme-dark', dark);
+          document.documentElement.setAttribute('data-color-scheme', mode);
+          document.documentElement.style.colorScheme = mode;
+
+          var color = dark ? '#121212' : '#eeeeee';
+          var metas = document.querySelectorAll('meta[name="theme-color"]');
+          var meta = metas[0];
+          if (!meta) {
+            meta = document.createElement('meta');
+            meta.setAttribute('name', 'theme-color');
+            document.head.appendChild(meta);
+          }
+          meta.removeAttribute('media');
+          meta.setAttribute('content', color);
+          for (var i = 1; i < metas.length; i++) metas[i].remove();
+        } catch (e) {}
+      })();
+    </script>
     <app-root></app-root>
   </body>
 </html>

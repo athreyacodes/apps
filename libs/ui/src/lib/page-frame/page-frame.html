@@ -9,12 +9,13 @@
 
 <header class="site-header">
   <div class="site-header__bar">
-    <a class="home-button" href="/" aria-label="Home">
-      <span class="tooltip">Home</span>
-      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-        <path fill="currentColor" d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" />
-      </svg>
-    </a>
+    @if (showHome()) {
+      <a class="home-button" href="/" aria-label="Home" matTooltip="Home" matTooltipPosition="below">
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <path fill="currentColor" d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" />
+        </svg>
+      </a>
+    }
     @if (title()) {
       <h1>
         <span class="site-header__title">{{ title() }}</span>
@@ -23,6 +24,18 @@
         }
       </h1>
     }
+    <div class="site-header__actions">
+      <ui-icon-button [tooltip]="themeLabel()" (click)="toggleTheme()">
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          @if (theme() === 'dark') {
+            <circle cx="12" cy="12" r="4" />
+            <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41" />
+          } @else {
+            <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z" />
+          }
+        </svg>
+      </ui-icon-button>
+    </div>
   </div>
 </header>
 
@@ -30,5 +43,5 @@
   <main class="page-frame__main">
     <ng-content />
   </main>
-  <ui-footer />
+  <ui-footer [mode]="showHome() ? 'default' : 'simple'" />
 </div>

@@ -1,9 +1,40 @@
 @use '../../../libs/tokens/src/lib/styles/tokens';
 
-/* layers-ui registers Montserrat as weight 400 only, so 800 never leaves regular.
-   The file is a variable font; this range lets the shell use the real weights. */
+/* Same face as How: weight 400 only, so 600/700 stay regular.
+   The heading face is the one place the real bold weight is used. */
+:root {
+  --mat-tooltip-container-color: var(--primary-color, #156064);
+  --mat-tooltip-supporting-text-color: #ffffff;
+  --mat-tooltip-container-shape: 0.25rem;
+  --mat-tooltip-supporting-text-font: var(--apps-font-sans);
+  --mat-tooltip-supporting-text-size: 0.75rem;
+  --mat-tooltip-supporting-text-line-height: 1.25;
+  --mat-tooltip-supporting-text-weight: 500;
+  --mat-tooltip-supporting-text-tracking: 0.01em;
+}
+
+:root.color-scheme-dark {
+  --apps-color-fg: #d2dfdf;
+  --apps-color-muted: #9fb3b4;
+  --apps-color-accent: #7fb3b5;
+  --mat-tooltip-container-color: var(--secondary-color, #f5f5f5);
+  --mat-tooltip-supporting-text-color: var(--primary-color, #156064);
+}
+
+body {
+  font-synthesis-weight: none;
+}
+
 @font-face {
   font-family: 'Montserrat';
+  src: url('/assets/layers-ui/fonts/montserrat.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Montserrat Heading';
   src: url('/assets/layers-ui/fonts/montserrat.ttf') format('truetype');
   font-weight: 100 900;
   font-style: normal;

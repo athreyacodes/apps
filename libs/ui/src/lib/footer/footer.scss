@@ -17,6 +17,22 @@
   margin: 0;
 }
 
+.site-footer--simple {
+  justify-content: center;
+  padding: 2rem 1.5rem 3rem;
+  text-align: center;
+}
+
+.site-footer--simple .credit {
+  color: #356063;
+  font-size: 0.8125rem;
+}
+
+:host-context(.color-scheme-dark) .site-footer .credit,
+:host-context([data-color-scheme='dark']) .site-footer .credit {
+  color: var(--apps-color-muted, #9fb3b4);
+}
+
 .elsewhere {
   display: flex;
   flex-wrap: wrap;
@@ -26,7 +42,7 @@
 
 .home-link,
 .icon-link {
-  color: inherit;
+  color: var(--apps-color-accent, var(--primary-color, #156064));
   text-decoration: none;
 }
 
@@ -51,47 +67,9 @@
   height: 1.2em;
 }
 
-.tooltip {
-  position: absolute;
-  bottom: calc(100% + 0.45rem);
-  left: 50%;
-  z-index: 2;
-  padding: 0.2rem 0.45rem;
-  border-radius: 0.25rem;
-  background: var(--primary-color, #156064);
-  color: #eeeeee;
-  font-size: 0.7rem;
-  font-weight: 700;
-  letter-spacing: 0.04em;
-  line-height: 1.2;
-  white-space: nowrap;
-  opacity: 0;
-  pointer-events: none;
-  transform: translateX(-50%) translateY(0.15rem);
-  transition:
-    opacity 0.12s ease,
-    transform 0.12s ease;
-}
-
-.tooltip::after {
-  content: '';
-  position: absolute;
-  top: 100%;
-  left: 50%;
-  border: 0.28rem solid transparent;
-  border-top-color: var(--primary-color, #156064);
-  transform: translateX(-50%);
-}
-
 .icon-link:hover,
 .icon-link:focus-visible {
-  color: var(--primary-color, #156064);
-}
-
-.icon-link:hover .tooltip,
-.icon-link:focus-visible .tooltip {
-  opacity: 1;
-  transform: translateX(-50%) translateY(0);
+  color: var(--apps-color-accent, var(--primary-color, #156064));
 }
 
 .icon-link:focus-visible {

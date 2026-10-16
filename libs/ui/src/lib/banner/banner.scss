@@ -1,0 +1,34 @@
+:host {
+  display: block;
+}
+
+.banner {
+  display: flex;
+  align-items: stretch;
+  gap: 2.5rem;
+}
+
+.banner__quote {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.banner__author {
+  flex: 0 0 auto;
+  width: max-content;
+  margin-left: auto;
+  margin-right: 0.25rem;
+}
+
+@media (max-width: 720px) {
+  .banner {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .banner__author {
+    flex-basis: auto;
+    width: 100%;
+    margin-right: 0;
+  }
+}

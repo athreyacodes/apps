@@ -1,4 +1,7 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, input } from '@angular/core';
+import { MatTooltip } from '@angular/material/tooltip';
+
+export type FooterMode = 'default' | 'simple';
 
 type IconKind = 'how' | 'linkedin' | 'github';
 
@@ -10,9 +13,11 @@ const ICON_LINKS: readonly { kind: IconKind; label: string; href: string }[] = [
 
 @Component({
   selector: 'ui-footer',
+  imports: [MatTooltip],
   template: `
-    <footer class="site-footer">
+    <footer class="site-footer" [class.site-footer--simple]="mode() === 'simple'">
       <p class="credit">© {{ year }} Athreya M R</p>
+      @if (mode() !== 'simple') {
       <nav class="elsewhere" aria-label="Elsewhere">
         <a
           class="home-link"
@@ -28,8 +33,9 @@ const ICON_LINKS: readonly { kind: IconKind; label: string; href: string }[] = [
             target="_blank"
             rel="noopener noreferrer me"
             [attr.aria-label]="link.label"
+            [matTooltip]="link.label"
+            matTooltipPosition="below"
           >
-            <span class="tooltip">{{ link.label }}</span>
             @switch (link.kind) {
               @case ('how') {
                 <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
@@ -59,12 +65,14 @@ const ICON_LINKS: readonly { kind: IconKind; label: string; href: string }[] = [
           </a>
         }
       </nav>
+      }
     </footer>
   `,
   styleUrl: './footer.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class Footer {
+  readonly mode = input<FooterMode>('default');
   protected readonly year = new Date().getFullYear();
   protected readonly iconLinks = ICON_LINKS;
 }

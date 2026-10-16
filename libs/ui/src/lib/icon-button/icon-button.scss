@@ -1,0 +1,39 @@
+:host {
+  display: inline-flex;
+  line-height: 0;
+}
+
+button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.15rem;
+  height: 2.15rem;
+  padding: 0;
+  border: 0;
+  border-radius: 0.55rem;
+  background: transparent;
+  color: var(--primary-color, #156064);
+  cursor: pointer;
+}
+
+button:hover,
+button:focus-visible {
+  background: var(--bg-light, #d2dfdf);
+}
+
+:host-context(.color-scheme-dark) button,
+:host-context([data-color-scheme='dark']) button {
+  color: var(--apps-color-accent, #7fb3b5);
+}
+
+button:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
+}
+
+:host ::ng-deep svg {
+  display: block;
+  width: 1.15rem;
+  height: 1.15rem;
+}
