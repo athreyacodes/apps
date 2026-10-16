@@ -11,7 +11,7 @@
     "home": {
       "path": "/",
       "title": "Apps",
-      "description": "Angular apps in one Nx workspace, set up the same way I build the frontends I ship for large products. The larger ones are micro-frontends. The smaller ones are proofs of concept. I built those first, to try an idea before taking on the full feature."
+      "description": "Angular apps in one Nx workspace, set up the same way I build the frontends for enterprises. The larger ones are micro-frontends. The smaller ones are proofs of concept. I built those first, to try an idea before taking on the full feature."
     }
   }
 }
