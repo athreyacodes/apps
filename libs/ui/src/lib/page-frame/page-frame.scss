@@ -6,6 +6,94 @@
   font-family: var(--apps-font-sans);
 }
 
+.site-header {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+}
+
+.site-header__bar {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+  max-width: 65rem;
+  margin: 0 auto;
+  padding: 1.15rem 0.75rem;
+}
+
+.home-button {
+  position: relative;
+  display: inline-flex;
+  flex: none;
+  color: inherit;
+  line-height: 0;
+  text-decoration: none;
+}
+
+.home-button svg {
+  width: 1.75rem;
+  height: 1.75rem;
+}
+
+.home-button .tooltip {
+  position: absolute;
+  top: calc(100% + 0.4rem);
+  left: 50%;
+  z-index: 2;
+  padding: 0.2rem 0.45rem;
+  border-radius: 0.25rem;
+  background: var(--primary-color, #156064);
+  color: #eeeeee;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  line-height: 1.2;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateX(-50%) translateY(-0.15rem);
+  transition:
+    opacity 0.12s ease,
+    transform 0.12s ease;
+}
+
+.home-button .tooltip::after {
+  content: '';
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  border: 0.28rem solid transparent;
+  border-bottom-color: var(--primary-color, #156064);
+  transform: translateX(-50%);
+}
+
+.home-button:hover .tooltip,
+.home-button:focus-visible .tooltip {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+.home-button:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 0.15em;
+}
+
+.site-header h1 {
+  margin: 0;
+  font-size: 1.75rem;
+  line-height: 1.1;
+}
+
+.site-header__title {
+  font-weight: 700;
+}
+
+.site-header__byline {
+  font-size: 0.82em;
+  font-weight: 400;
+}
+
 .page-frame__chrome {
   position: relative;
   z-index: 1;

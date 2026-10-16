@@ -7,6 +7,25 @@
   </div>
 </div>
 
+<header class="site-header">
+  <div class="site-header__bar">
+    <a class="home-button" href="/" aria-label="Home">
+      <span class="tooltip">Home</span>
+      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+        <path fill="currentColor" d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" />
+      </svg>
+    </a>
+    @if (title()) {
+      <h1>
+        <span class="site-header__title">{{ title() }}</span>
+        @if (byline()) {
+          <span class="site-header__byline"> {{ byline() }}</span>
+        }
+      </h1>
+    }
+  </div>
+</header>
+
 <div class="page-frame__chrome">
   <main class="page-frame__main">
     <ng-content />

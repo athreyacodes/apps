@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, input } from '@angular/core';
 import { Footer } from '../footer/footer';
 
 @Component({
@@ -8,4 +8,7 @@ import { Footer } from '../footer/footer';
   styleUrl: './page-frame.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class PageFrame {}
+export class PageFrame {
+  readonly title = input('');
+  readonly byline = input('');
+}
