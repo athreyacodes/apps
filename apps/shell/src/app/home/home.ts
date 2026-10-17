@@ -6,6 +6,7 @@ import { applyPageSeo } from '@apps/seo';
   imports: [PageFrame, Banner, Author],
   selector: 'app-home',
   templateUrl: './home.html',
+  styleUrl: './home.scss',
 })
 export class Home {
   constructor() {

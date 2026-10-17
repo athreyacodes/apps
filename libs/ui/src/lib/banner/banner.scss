@@ -2,6 +2,23 @@
   display: block;
 }
 
+/* Home places the banner's two columns on the same grid as the sections below,
+   so the side section stays the width of the author column. */
+:host-context(.home) {
+  display: contents;
+}
+
+:host-context(.home) .banner {
+  display: contents;
+}
+
+@media (min-width: 721px) {
+  :host-context(.home) .banner__author {
+    width: auto;
+    margin: 0;
+  }
+}
+
 .banner {
   display: flex;
   align-items: stretch;
