@@ -40,19 +40,18 @@
 }
 
 .home-side li + li {
-  margin-top: 0.35rem;
+  border-top: 1px solid rgb(21 96 100 / 28%);
 }
 
 .home-side li {
   display: grid;
   gap: 0.2rem;
-  padding: 0.7rem 0.8rem 0.7rem 1.15rem;
-  border-radius: 1.25rem;
+  padding: 0.85rem 0.8rem 0.85rem 1.15rem;
 }
 
-.home-side li:hover,
-.home-side li:focus-within {
-  background: var(--apps-card-soft, rgb(21 96 100 / 14%));
+:host-context(.color-scheme-dark) .home-side li + li,
+:host-context([data-color-scheme='dark']) .home-side li + li {
+  border-top-color: rgb(159 179 180 / 32%);
 }
 
 .poc-note,
