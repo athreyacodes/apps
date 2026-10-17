@@ -87,9 +87,60 @@
   color: var(--apps-color-muted, #9fb3b4);
 }
 
+.author-trigger {
+  display: none;
+  flex: none;
+  width: 2.15rem;
+  height: 2.15rem;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  overflow: hidden;
+  background: var(--bg-light, #d2dfdf);
+  cursor: pointer;
+}
+
+.author-trigger picture,
+.author-trigger img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.author-trigger:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 0.15em;
+}
+
+.author-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 4;
+  padding: 0;
+  border: 0;
+  background: rgb(238 238 238 / 45%);
+  backdrop-filter: blur(12px);
+  opacity: 1;
+  transition: opacity 340ms linear;
+}
+
+.author-backdrop.is-closing {
+  opacity: 0;
+}
+
+:host-context(.color-scheme-dark) .author-backdrop,
+:host-context([data-color-scheme='dark']) .author-backdrop {
+  background: rgb(5 5 5 / 45%);
+}
+
 @media (max-width: 720px) {
   .home {
     grid-template-columns: minmax(0, 1fr);
     row-gap: 1.5rem;
+  }
+
+  .author-trigger {
+    display: block;
   }
 }

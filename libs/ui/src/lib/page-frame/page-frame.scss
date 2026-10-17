@@ -96,6 +96,12 @@
   padding: 0.75rem 0.5rem 1rem;
 }
 
+@media (max-width: 720px) {
+  :host:has(.home.is-author-open) .page-frame__chrome {
+    z-index: 3;
+  }
+}
+
 .page-frame__main {
   flex: 1;
   color: var(--apps-color-fg);

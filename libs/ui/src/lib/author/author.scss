@@ -10,6 +10,16 @@
   background: var(--apps-card-soft, rgb(21 96 100 / 14%));
 }
 
+@media (max-width: 720px) {
+  :host-context(.home.is-author-open) .author {
+    background: color-mix(in srgb, rgb(21 96 100) 14%, var(--bg-color, #eeeeee));
+  }
+
+  :host-context(.color-scheme-dark):host-context(.home.is-author-open) .author {
+    background: color-mix(in srgb, rgb(127 179 181) 18%, var(--bg-color, #121212));
+  }
+}
+
 .author-identity {
   display: flex;
   align-items: center;

@@ -1,12 +1,41 @@
 <ui-page-frame title="Apps" byline="by Athreya">
-  <div class="home">
+  <button
+    #authorTrigger
+    type="button"
+    class="author-trigger"
+    matTooltip="Athreya M R"
+    matTooltipPosition="below"
+    [matTooltipDisabled]="authorOpen()"
+    aria-label="Athreya M R"
+    [attr.aria-expanded]="authorOpen()"
+    aria-controls="author-card"
+    (click)="toggleAuthor()"
+  >
+    <picture>
+      <source type="image/avif" srcset="/images/dp-240.avif" />
+      <source type="image/webp" srcset="/images/dp-240.webp" />
+      <img src="/images/dp-240.jpg" alt="" width="34" height="34" />
+    </picture>
+  </button>
+
+  @if (authorOpen()) {
+    <button
+      type="button"
+      class="author-backdrop"
+      [class.is-closing]="authorClosing()"
+      aria-label="Close profile"
+      (click)="closeAuthor()"
+    ></button>
+  }
+
+  <div class="home" [class.is-author-open]="authorOpen()">
     <ui-banner>
       <p>
         Angular apps in one Nx workspace, set up the same way I build the frontends for enterprises.
         The larger ones are micro-frontends. The smaller ones are proofs of concept. I built those
         first, to try an idea before taking on the full feature.
       </p>
-      <ui-author />
+      <ui-author id="author-card" #authorCard />
     </ui-banner>
 
     <section class="home-main">
