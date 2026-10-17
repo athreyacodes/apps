@@ -14,7 +14,7 @@
 
   <nav class="author-links" aria-label="Elsewhere">
     @for (link of author.links; track link.kind) {
-      <ui-icon-button [tooltip]="link.label" (click)="open(link.href)">
+      <ui-icon-button [tooltip]="link.label" (pressed)="open(link.href)">
         @switch (link.kind) {
           @case ('portfolio') {
             <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">

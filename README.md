@@ -4,12 +4,12 @@ Nx workspace for [apps.athreya.codes](https://apps.athreya.codes). Angular apps 
 
 ## Projects
 
-| Project   | Role                      |
-| --------- | ------------------------- |
-| `shell`   | Site home (`/`)           |
-| `tokens`  | Design tokens + layers-ui |
-| `seo`     | Shared titles and meta    |
-| `ui`      | Shared page chrome        |
+| Project  | Role                      |
+| -------- | ------------------------- |
+| `shell`  | Site home (`/`)           |
+| `tokens` | Design tokens + layers-ui |
+| `seo`    | Shared titles and meta    |
+| `ui`     | Shared page chrome        |
 
 ## Commands
 

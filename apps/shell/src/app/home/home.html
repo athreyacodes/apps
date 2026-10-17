@@ -3,8 +3,8 @@
     <ui-banner>
       <p>
         Angular apps in one Nx workspace, set up the same way I build the frontends for enterprises.
-        The larger ones are micro-frontends. The smaller ones are proofs of concept. I
-        built those first, to try an idea before taking on the full feature.
+        The larger ones are micro-frontends. The smaller ones are proofs of concept. I built those
+        first, to try an idea before taking on the full feature.
       </p>
       <ui-author />
     </ui-banner>
@@ -21,7 +21,7 @@
             <p class="poc-name">{{ proof.name }}</p>
             <p class="poc-note">{{ proof.note }}</p>
             <div class="poc-links">
-              <ui-icon-button tooltip="Checkout this Project." (click)="open(proof.live)">
+              <ui-icon-button tooltip="Checkout this Project." (pressed)="open(proof.live)">
                 <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
                   <path
                     fill="currentColor"
@@ -29,7 +29,7 @@
                   />
                 </svg>
               </ui-icon-button>
-              <ui-icon-button tooltip="Open this Repo." (click)="open(proof.repo)">
+              <ui-icon-button tooltip="Open this Repo." (pressed)="open(proof.repo)">
                 <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
                   <path
                     fill="currentColor"

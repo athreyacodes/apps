@@ -10,7 +10,7 @@ import { MatTooltip } from '@angular/material/tooltip';
       [attr.aria-label]="tooltip()"
       [matTooltip]="tooltip()"
       matTooltipPosition="below"
-      (click)="pressed($event)"
+      (click)="emit($event)"
     >
       <ng-content />
     </button>
@@ -20,10 +20,10 @@ import { MatTooltip } from '@angular/material/tooltip';
 })
 export class IconButton {
   readonly tooltip = input.required<string>();
-  readonly click = output<MouseEvent>();
+  readonly pressed = output<MouseEvent>();
 
-  protected pressed(event: MouseEvent): void {
+  protected emit(event: MouseEvent): void {
     event.stopPropagation();
-    this.click.emit(event);
+    this.pressed.emit(event);
   }
 }

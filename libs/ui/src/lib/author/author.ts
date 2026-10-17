@@ -8,7 +8,11 @@ const AUTHOR = {
   links: [
     { kind: 'portfolio' as const, label: 'Checkout my Portfolio.', href: 'https://athreya.codes/' },
     { kind: 'how' as const, label: "Here's How - Blogs", href: 'https://how.athreya.codes' },
-    { kind: 'linkedin' as const, label: 'Say Hello! on LinkedIn.', href: 'https://www.linkedin.com/in/athreyamr/' },
+    {
+      kind: 'linkedin' as const,
+      label: 'Say Hello! on LinkedIn.',
+      href: 'https://www.linkedin.com/in/athreyamr/',
+    },
     { kind: 'github' as const, label: 'View My GitHub', href: 'https://github.com/athreyacodes' },
   ],
 };
